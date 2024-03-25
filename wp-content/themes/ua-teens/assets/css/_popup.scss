@@ -1,0 +1,238 @@
+
+/*--- model-modal ---*/
+
+.model-modal{
+  padding-top: 150px;
+
+  .modal-dialog{
+    width: 1160px;
+    max-width: 1160px;
+
+    @media(max-width: 1250px){
+      width: 960px;
+    }
+
+    @media(max-width: 992px){
+      width: 750px;
+    }
+
+    @media(max-width: 767px){
+      width: 540px;
+    }
+
+    @media(max-width: 757px){
+      width: 90%;
+    }
+
+    .modal-content{
+      padding: 60px;
+      background-color: #ffffff;
+
+      @media(max-width: 992px){
+        padding: 40px;
+      }
+
+      @media(max-width: 575px){
+        padding: 30px 15px;
+      }
+    }
+
+    .close{
+      top: -144px;
+      right: -130px;
+
+      @media(max-width: 992px){
+        top: -75px;
+        right: -40px;
+      }
+
+      @media(max-width: 575px){
+        right: -20px;
+      }
+    }
+
+    .modal-body{
+      display: flex;
+      justify-content: space-between;
+
+      @media(max-width: 767px){
+        flex-wrap: wrap;
+      }
+
+      .left-column,
+      .right-column{
+        width: calc(50% - 16px);
+        position: relative;
+
+        @media(max-width: 767px){
+          width: 100%;
+        }
+      }
+
+      .bg-image{
+        margin-top: 24px;
+        width: calc(100% + 60px);
+        transform: translateX(-60px);
+        overflow: hidden;
+        z-index: 1;
+
+        @media(max-width: 767px){
+          display: none;
+        }
+
+        .wotermark-logo{
+          width: calc(100% + 125px);
+          height: auto;
+          transform: translateX(-125px);
+        }
+      }
+
+
+      .subtitle{
+        margin-bottom: 24px;
+      }
+
+      .quote{
+        padding-left: 18px;
+        text-transform: uppercase;
+        font-family: $f-bold;
+        border-left: 4px solid $color-orange;
+        margin-bottom: 0;
+
+        @media(max-width: 767px){
+          margin-bottom: 24px;
+        }
+      }
+
+      .text{
+        color: #777;
+        margin-bottom: 16px;
+
+        p{
+          margin-bottom: 16px;
+
+          strong{
+            color: $color-black;
+            font-family: $f-bold;
+          }
+
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .image{
+        width: 100%;
+      }
+    }
+
+    .form-container{
+      background-color: $color-black;
+      padding: 60px;
+      position: relative;
+      z-index: 2;
+      margin-top: -100px;
+
+      @media(max-width: 1200px){
+        padding: 40px;
+      }
+
+      @media(max-width: 575px){
+        padding: 32px 16px;
+      }
+
+      .block-title{
+        color: $color-white-gray;
+      }
+
+      .subtitle{
+        color: $color-white-gray;
+        margin-bottom: 32px;
+      }
+
+      .fd-form{
+        .container-fluid{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .row{
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7){
+              width: calc(50% - 16px) !important;
+
+              @media(max-width: 992px){
+                width: 100% !important;
+              }
+            }
+
+            &.fd-empty-row{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*-- video modsl ---*/
+
+.video-modal{
+  .modal-dialog{
+    width: 60%;
+    max-width: 60%;
+
+    @media(max-width: 992px){
+      width: 80%;
+      max-width: 80%;
+    }
+
+    @media(max-width: 575px){
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .modal-content{
+      .modal-header{
+        .close{
+          top: -40px;
+          right: -40px;
+
+          @media(max-width: 575px){
+            right: 15px;
+          }
+        }
+      }
+
+      .modal-body{
+        width: 100%;
+        padding-bottom: 56.25%;
+        position: relative;
+
+        .video{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          iframe{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+          }
+
+          video{
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

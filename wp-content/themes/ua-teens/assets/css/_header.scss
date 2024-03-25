@@ -1,0 +1,251 @@
+/*--- Site header ---*/
+
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: all 0.5s;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  &.fixed-header{
+    transform: translateY(-110%);
+  }
+
+  &.fixed-header-visible{
+    transform: translateY(0);
+    background-color: $color-black;
+
+    .content{
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .content{
+    position: relative;
+    z-index: 12;
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -24px;
+      height: 1px;
+      width: 100%;
+      background: $color-white-gray;
+      z-index: 12;
+
+      @media(max-width: 575px){
+        left: 15px;
+        right: 15px;
+      }
+    }
+
+    .logo{
+      width: 70px;
+      margin-right: 64px;
+      position: relative;
+      z-index: 12;
+    }
+
+    .phone{
+      margin-left: auto;
+      font-family: $f-bold;
+      font-size: 16px;
+
+      @media(max-width: 1200px){
+        font-size: 14px;
+      }
+
+      @media(max-width: 992px){
+        display: none;
+      }
+    }
+  }
+}
+
+/*--- Header navigation ---*/
+
+.header-navigation{
+  @media(max-width: 992px){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;
+    background-color: $color-black;
+    z-index: 11;
+    padding: 100px 15px 40px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /*align-items: center;*/
+    justify-content: center;
+    transition: all 0.5s;
+    transform: translateX(-110%);
+    overflow: auto;
+    gap: 32px;
+
+  }
+
+  &.open-menu{
+    transform: translateX(0);
+  }
+
+  .phone{
+    display: none;
+
+    @media(max-width: 992px){
+      display: flex !important;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+.main-menu{
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 32px;
+
+  @media(max-width: 992px){
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .menu-item{
+    list-style: none;
+
+    @media(max-width: 992px){
+      width: 100%;
+      text-align: center;
+    }
+    
+    a{
+      text-transform: uppercase;
+      font-size: 16px;
+      font-family: $f-bold;
+      color: $color-white-gray;
+      padding: 4px 8px;
+      transition: all 0.2s;
+
+      @media(max-width: 1200px){
+        font-size: 14px;
+      }
+    }
+
+    &.menu-item-has-children{
+      position: relative;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+
+      @media(max-width: 992px){
+        justify-content: center;
+        /*padding-left: 24px;*/
+        flex-wrap: wrap;
+      }
+
+      &>a{
+        display: flex;
+        align-items: center;
+
+        @media(max-width: 992px){
+          padding-left: 32px;
+        }
+
+        &:after{
+          content: '';
+          width: 24px;
+          height: 24px;
+          background-image: url("../img/arrow-white.svg");
+          display: block;
+          margin-left: 8px;
+        }
+      }
+
+      .sub-menu{
+        display: none;
+        padding: 50px 0 0 0;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: max-content;
+
+        @media(max-width: 992px){
+          position: relative;
+          width: 100%;
+          padding-top: 0;
+        }
+
+        .menu-item{
+          background-color: $color-white-gray;
+          padding: 8px;
+          width: 100%;
+
+          @media(max-width: 992px){
+            background-color: rgba(0,0,0,0);
+          }
+
+          a{
+            color: $color-black;
+            text-transform: none;
+
+            @media(max-width: 992px){
+              color: $color-white-gray;
+            }
+          }
+        }
+      }
+
+      &:hover{
+
+        &>a{
+          &:after{
+            background-image: url("../img/arrow-dark.svg");
+
+            @media(max-width: 992px){
+              background-image: url("../img/arrow-white.svg");
+            }
+          }
+        }
+
+
+        .sub-menu{
+          display: block;
+        }
+      }
+    }
+
+    &:hover{
+      background-color: $color-white-gray;
+
+      @media(max-width: 992px){
+        background-color: rgba(0,0,0,0);
+      }
+
+      a{
+        color: $color-black;
+
+        @media(max-width: 992px){
+          color: $color-white-gray;
+        }
+      }
+    }
+  }
+
+
+  @media(max-width: 992px){
+    display: block;
+    gap: 30px;
+  }
+}
+

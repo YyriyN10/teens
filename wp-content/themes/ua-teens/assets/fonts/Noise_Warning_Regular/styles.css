@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Noise_Warning_Regular';
+  src: url(./Noise_Warning_Regular.woff) format('woff'),
+       url(./Noise_Warning_Regular.woff2) format('woff2'),
+       url(./Noise_Warning_Regular.ttf) format('truetype');
+}
