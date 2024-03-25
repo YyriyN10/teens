@@ -1349,6 +1349,22 @@
       }
     }
 
+    .audio-part{
+      width: 100%;
+
+      @media(max-width: 1370px){
+        padding-bottom: 106px;
+      }
+
+      @media(max-width: 767px){
+        padding-bottom: 0;
+      }
+
+      iframe{
+        width: 100%;
+      }
+    }
+
     .text-part{
       width: calc(100% - 570px);
 
