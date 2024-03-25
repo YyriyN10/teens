@@ -31,10 +31,11 @@
 
 		         ->add_fields( array(
 		         	 Field::make_select('ua_teens_stydent_works_content_type'.ua_teens_lang_prefix(), 'Вид прежставлення роботи')
-						->set_options( array(
-							'image' => 'Зображення',
-							'video' => 'Відео'
-						)),
+								->set_options( array(
+									'image' => 'Зображення',
+									'video' => 'Відео',
+									'audio' => 'Аудіо'
+								)),
 			         Field::make_image('ua_teens_stydent_works_image'.ua_teens_lang_prefix(), 'Зображення роботи')
 				         ->set_conditional_logic( array(
 					         'relation' => 'AND',
@@ -53,9 +54,9 @@
 						        'compare' => '=',
 					        )
 				        ) )
-						->add_fields( array(
-							Field::make_image('image', 'Зображення')
-						)),
+								->add_fields( array(
+									Field::make_image('image', 'Зображення')
+								)),
 			         Field::make_text('ua_teens_stydent_works_video_id'.ua_teens_lang_prefix(), 'ID відео роботи з youtube')
 			              ->set_conditional_logic( array(
 				              'relation' => 'AND',
@@ -74,5 +75,18 @@
 					              'compare' => '=',
 				              )
 			              ) ),
+			         Field::make_text('ua_teens_stydent_works_audio'.ua_teens_lang_prefix(), 'Посилання на аудіо роботу')
+			            ->set_attribute('type', 'url')
+				          ->set_conditional_logic( array(
+					         'relation' => 'AND',
+					         array(
+						         'field' => 'ua_teens_stydent_works_content_type'.ua_teens_lang_prefix(),
+						         'value' => 'audio',
+						         'compare' => '=',
+					         )
+				         ) ),
+
+
 		         ));
+
 	}

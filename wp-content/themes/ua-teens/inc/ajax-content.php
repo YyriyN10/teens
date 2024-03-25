@@ -56,46 +56,61 @@
                 $workVideoId = carbon_get_post_meta(get_the_ID(), 'ua_teens_stydent_works_video_id'.ua_teens_lang_prefix());
                 $workVideoPreview = carbon_get_post_meta(get_the_ID(), 'ua_teens_stydent_works_video_preview'.ua_teens_lang_prefix());
                 $workMediaGallery = carbon_get_post_meta(get_the_ID(), 'ua_teens_stydent_works_image_list'.ua_teens_lang_prefix());
+	              $workMediaAudio = carbon_get_post_meta(get_the_ID(), 'ua_teens_stydent_works_audio'.ua_teens_lang_prefix());
             ?>
-					<div class="media-part">
-            <?php if ( $workMediaPart == 'image' ):?>
-              <a href="<?php echo wp_get_attachment_image_src($workImage, 'full')[0];?>" data-fancybox="student-gallery<?php the_ID();?>">
-                <img
-                    src="<?php echo wp_get_attachment_image_src($workImage, 'full')[0];?>"
-                    alt="<?php echo get_post_meta($workImage, '_wp_attachment_image_alt', TRUE);?>"
-                >
-              </a>
+					<?php if ( $workMediaPart == 'image' ):?>
+            <div class="media-part">
 
-              <?php if( $workMediaGallery ):?>
-                    <?php foreach( $workMediaGallery as $innerGallery ):?>
-                  <a href="<?php echo wp_get_attachment_image_src($innerGallery['image'], 'full')[0];?>" class="gallery" data-fancybox="student-gallery<?php the_ID();?>">
-                    <!--<img
-                        src="<?php /*echo wp_get_attachment_image_src($innerGallery, 'full')[0];*/?>"
-                        alt="<?php /*echo get_post_meta($innerGallery, '_wp_attachment_image_alt', TRUE);*/?>"
-                    >-->
-                  </a>
-                    <?php endforeach;?>
-              <?php endif;?>
+                <a href="<?php echo wp_get_attachment_image_src($workImage, 'full')[0];?>" data-fancybox="student-gallery<?php the_ID();?>">
+                  <img
+                      src="<?php echo wp_get_attachment_image_src($workImage, 'full')[0];?>"
+                      alt="<?php echo get_post_meta($workImage, '_wp_attachment_image_alt', TRUE);?>"
+                  >
+                </a>
+
+                <?php if( $workMediaGallery ):?>
+                      <?php foreach( $workMediaGallery as $innerGallery ):?>
+                    <a href="<?php echo wp_get_attachment_image_src($innerGallery['image'], 'full')[0];?>" class="gallery" data-fancybox="student-gallery<?php the_ID();?>">
+                      <!--<img
+                          src="<?php /*echo wp_get_attachment_image_src($innerGallery, 'full')[0];*/?>"
+                          alt="<?php /*echo get_post_meta($innerGallery, '_wp_attachment_image_alt', TRUE);*/?>"
+                      >-->
+                    </a>
+                      <?php endforeach;?>
+                <?php endif;?>
+                </div>
+                <div class="text-part">
+                  <p class="name"><?php the_title();?></p>
+                  <div class="text"><?php the_content();?></div>
+                </div>
+
 
             <?php endif;?>
-            <?php if( $workMediaPart == 'video' ):?>
-              <div class="preview" >
-                <img
-                    src="<?php echo wp_get_attachment_image_src($workVideoPreview, 'full')[0];?>"
-                    alt="<?php echo get_post_meta($workVideoPreview, '_wp_attachment_image_alt', TRUE);?>"
-                >
-                <button class="play" data-videoid="<?php echo $workVideoId;?>">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-                    <path d="M31.9999 5.3335C26.7258 5.3335 21.57 6.89747 17.1847 9.82764C12.7994 12.7578 9.38148 16.9226 7.36314 21.7953C5.34481 26.668 4.81672 32.0297 5.84566 37.2026C6.8746 42.3754 9.41435 47.1269 13.1438 50.8563C16.8732 54.5857 21.6247 57.1255 26.7975 58.1544C31.9704 59.1834 37.3321 58.6553 42.2048 56.637C47.0775 54.6186 51.2423 51.2007 54.1725 46.8154C57.1026 42.4301 58.6666 37.2743 58.6666 32.0002C58.6666 28.4982 57.9768 25.0306 56.6367 21.7953C55.2966 18.5599 53.3323 15.6202 50.8561 13.144C48.3799 10.6678 45.4402 8.7035 42.2048 7.36338C38.9695 6.02325 35.5018 5.3335 31.9999 5.3335ZM26.6666 44.0002V20.0002L42.6666 32.0002L26.6666 44.0002Z" fill="#F8F8F8"/>
-                  </svg>
-                </button>
-              </div>
-            <?php endif;?>
-          </div>
-					<div class="text-part">
-						<p class="name"><?php the_title();?></p>
-						<div class="text"><?php the_content();?></div>
-					</div>
+          <?php if( $workMediaPart == 'video' ):?>
+            <div class="media-part">
+                <div class="preview" >
+                  <img
+                      src="<?php echo wp_get_attachment_image_src($workVideoPreview, 'full')[0];?>"
+                      alt="<?php echo get_post_meta($workVideoPreview, '_wp_attachment_image_alt', TRUE);?>"
+                  >
+                  <button class="play" data-videoid="<?php echo $workVideoId;?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                      <path d="M31.9999 5.3335C26.7258 5.3335 21.57 6.89747 17.1847 9.82764C12.7994 12.7578 9.38148 16.9226 7.36314 21.7953C5.34481 26.668 4.81672 32.0297 5.84566 37.2026C6.8746 42.3754 9.41435 47.1269 13.1438 50.8563C16.8732 54.5857 21.6247 57.1255 26.7975 58.1544C31.9704 59.1834 37.3321 58.6553 42.2048 56.637C47.0775 54.6186 51.2423 51.2007 54.1725 46.8154C57.1026 42.4301 58.6666 37.2743 58.6666 32.0002C58.6666 28.4982 57.9768 25.0306 56.6367 21.7953C55.2966 18.5599 53.3323 15.6202 50.8561 13.144C48.3799 10.6678 45.4402 8.7035 42.2048 7.36338C38.9695 6.02325 35.5018 5.3335 31.9999 5.3335ZM26.6666 44.0002V20.0002L42.6666 32.0002L26.6666 44.0002Z" fill="#F8F8F8"/>
+                    </svg>
+                  </button>
+                </div>
+
+            </div>
+            <div class="text-part">
+              <p class="name"><?php the_title();?></p>
+              <div class="text"><?php the_content();?></div>
+            </div>
+          <?php endif;?>
+          <?php if ( $workMediaPart == 'audio'):?>
+            <div class="audio-part">
+              <iframe width="100%" height="166" src="<?php echo $workMediaAudio;?>" frameborder="no" scrolling="no" ></iframe>
+            </div>
+          <?php endif;?>
 				</div>
 			<?php endwhile;?>
 
