@@ -65,7 +65,8 @@
     width: calc( 33% - ((32px * 2)/3));
     list-style: none;
     background-color: $color-white;
-    padding: 32px;
+    /*padding: 32px;*/
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,21 +129,22 @@
 
   .main-title {
     position: relative;
-    font-size: 80px;
-    margin-bottom: 30px;
+    /*font-size: 80px;
+    margin-bottom: 30px;*/
+
 
     @media(max-width: 992px){
-      font-size: 70px;
+      /*font-size: 70px;*/
       text-align: center;
     }
 
-    @media(max-width: 767px){
-      font-size: 60px;
-    }
-
-    @media(max-width: 575px){
-      font-size: 50px;
-    }
+    //@media(max-width: 767px){
+    //  font-size: 60px;
+    //}
+    //
+    //@media(max-width: 575px){
+    //  font-size: 50px;
+    //}
 
     span{
       position: relative;
@@ -181,7 +183,8 @@
     .slide{
       display: flex;
       gap: 32px;
-      padding-bottom: 72px;
+      /*padding-bottom: 72px;*/
+      padding-bottom: 40px;
 
       @media(max-width: 992px){
         flex-wrap: wrap;
@@ -192,7 +195,8 @@
 
     .image-wrapper,
     .inner-gallery-slider{
-      width: 424px;
+      /*width: 424px;*/
+      width: 392px;
       z-index: 5;
 
       @media(max-width: 1200px){
@@ -228,7 +232,9 @@
     }
 
     .text-wrapper{
-      width: 767px;
+      /*width: 767px;*/
+      width: calc(100% - 424px);
+
 
       @media(max-width: 1200px){
         width: calc(100% - 382px);
@@ -300,8 +306,8 @@
 
   .next-btn{
     right: 15px;
-    width: 196px;
-    height: 196px;
+    width: 180px;
+    height: 180px;
     background-color: $color-orange;
 
     @media(max-width: 1200px){
@@ -331,8 +337,8 @@
 
   .prev-btn{
     left: 15px;
-    width: 82px;
-    height: 82px;
+    width: 74px;
+    height: 74px;
     background-color: #e3e3e3;
 
     @media(max-width: 767px){
@@ -352,8 +358,8 @@
 
   .slide-counter{
     margin-left: 114px;
-    height: 82px;
-    line-height: 82px;
+    height: 74px;
+    line-height: 74px;
     margin-bottom: 0;
     font-size: 24px;
     font-family: $f-bold;
@@ -527,7 +533,8 @@
 
     .inner{
       background-color: $color-black;
-      padding: 32px;
+      /*padding: 32px;*/
+      padding: 24px;
       display: grid;
       gap: 16px;
       height: 100%;
@@ -537,7 +544,7 @@
       }
 
       @media(max-width: 767px){
-        padding: 32px;
+        padding: 24px;
       }
 
       @media(max-width: 360px){
@@ -671,20 +678,16 @@
       padding-right: 40px;
       margin-bottom: 0;
       z-index: 2;
-      font-size: 32px;
+      /*font-size: 32px;*/
+      font-size: 24px;
       font-family: $f-bold;
       transition: all 0.5s;
       color: $color-black !important;
-
-      @media(max-width: 1370px){
-        font-size: 30px;
-      }
 
       @media(max-width: 767px){
         bottom: 16px;
         left: 24px;
         padding-right: 24px;
-        font-size: 26px;
       }
 
       @media(max-width: 440px){
@@ -750,7 +753,15 @@
 /*--- study-schedules ---*/
 
 .study-schedules{
-  background-color: $color-white-gray;
+  /*background-color: $color-white-gray;*/
+
+  .white-side{
+    background-color: $color-white-gray;
+  }
+
+  .dark-side{
+    background-color: $color-black;
+  }
 
   .subtitle{
     margin-bottom: 16px;
@@ -804,23 +815,23 @@
     .tab-pane{
 
       .inner{
-        padding-left: 60px;
-        padding-right: 60px;
+        /*padding-left: 60px;
+        padding-right: 60px;*/
         display: flex;
 
-        @media(max-width: 1370px){
+        /*@media(max-width: 1370px){
           padding-left: 30px;
           padding-right: 30px;
-        }
+        }*/
 
         @media(max-width: 767px){
           flex-wrap: wrap;
         }
 
-        @media(max-width: 575px){
+        /*@media(max-width: 575px){
           padding-left: 16px;
           padding-right: 16px;
-        }
+        }*/
       }
 
       .day{
@@ -967,29 +978,30 @@
 /*--- cost-education ---*/
 
 .cost-education{
-  background-color: $color-white-gray;
+  /*background-color: $color-white-gray;*/
+  background-color: $color-black;
   color: $color-gray;
 
   .content{
     background-color: $color-black;
     display: flex;
     gap: 32px;
-    padding-left: 60px;
-    padding-right: 60px;
+    //padding-left: 60px;
+    //padding-right: 60px;
 
-    @media(max-width: 1200px){
-      padding-left: 40px;
-      padding-right: 40px;
-    }
+    //@media(max-width: 1200px){
+    //  padding-left: 40px;
+    //  padding-right: 40px;
+    //}
 
     @media(max-width: 992px){
       flex-wrap: wrap;
     }
 
-    @media(max-width: 575px){
+    /*@media(max-width: 575px){
       padding-left: 16px;
       padding-right: 16px;
-    }
+    }*/
 
     .left-part,
     .right-part{
@@ -1041,7 +1053,7 @@
         color: $color-orange;
         margin-right: 16px;
 
-        @media(max-width: 370px){
+        @media(max-width: 440px){
           font-size: 42px;
         }
       }
@@ -1179,9 +1191,10 @@
     padding: 0;
     margin: 0;
     gap: 8px;
-    width: 310px;
+    /*width: 310px;*/
+    width: 392px;
 
-    @media(max-width: 1370px){
+    @media(max-width: 1274px){
       width: 100%;
       margin-bottom: 30px;
       display: flex;
@@ -1279,9 +1292,10 @@
   &__slider{
     position: relative;
     z-index: 1;
-    width: 994px;
+    /*width: 994px;*/
+    width: calc(100% - 424px);
 
-    @media(max-width: 1370px){
+    @media(max-width: 1274px){
       width: 100%;
     }
 
@@ -1303,10 +1317,11 @@
     }
 
     .media-part{
-      width: 538px;
+      /*width: 538px;*/
+      width: 392px;
       position: relative;
 
-      @media(max-width: 1370px){
+      @media(max-width: 1274px){
         width: calc(50% - 16px);
       }
 
@@ -1366,9 +1381,10 @@
     }
 
     .text-part{
-      width: calc(100% - 570px);
+      /*width: calc(100% - 570px);*/
+      width: calc(100% - 424px);
 
-      @media(max-width: 1370px){
+      @media(max-width: 1274px){
         width: calc(50% - 16px);
       }
 
@@ -1405,12 +1421,13 @@
     position: absolute;
     align-items: center;
     justify-content: space-between;
-    width: 424px;
+    /*width: 424px;*/
+    width: 392px;
     right: 15px;
     bottom: 0;
     z-index: 2;
 
-    @media(max-width: 1370px){
+    @media(max-width: 1274px){
       width: calc(50% - 16px);
     }
 

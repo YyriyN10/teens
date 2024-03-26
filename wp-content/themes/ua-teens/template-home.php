@@ -28,7 +28,7 @@
   <section class="main-screen" style="background-image: url('<?php echo $mainScreenBgImage;?>')">
     <div class="container">
       <div class="row">
-        <div class="content col-xl-7 col-lg-8 col-12">
+        <div class="content col-xl-8 col-lg-9 col-12">
           <h1 class="block-title big-title big-margin upper-title"><?php echo $mainScreenTitle;?></h1>
           <p class="subtitle big-subtitle"><?php echo $mainScreenSubTitle;?></p>
           <a href="#contact-form" rel="nofollow" class="button orange-btn scroll-to">
@@ -79,7 +79,7 @@
   <section class="we-are-it indent-top-small indent-bottom-big animation-tracking">
     <div class="container">
       <div class="row first-up">
-        <h2 class="block-title main-title upper-title col-lg-8 col-12 offset-md-0 offset-lg-4">
+        <h2 class="block-title main-title small-title small-margin upper-title col-lg-8 col-12 offset-md-0 offset-lg-4">
 
             <?php echo $weAreItBlockTitle;?>
           <svg class="wotermark-logo" width="549" height="253" viewBox="0 0 549 253" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +122,7 @@
                 <?php endif;?>
 
                 <div class="text-wrapper">
-                  <h2 class="block-title big-title big-margin upper-title"><?php echo $item['title'];?></h2>
+                  <h2 class="block-title small-title big-margin upper-title"><?php echo $item['title'];?></h2>
                   <div class="text">
                     <h3 class="subtitle small-subtitle"><?php echo $item['subtitle'];?></h3>
                     <?php echo wpautop( $item['description']);?>
@@ -162,7 +162,7 @@
     <div class="container">
       <div class="row">
         <div class="left-content col-lg-6 first-up">
-          <h2 class="block-title big-title big-margin"><?php echo $activeSocialPositionBlockTitle;?></h2>
+          <h2 class="block-title small-title big-margin"><?php echo $activeSocialPositionBlockTitle;?></h2>
           <h3 class="subtitle small-subtitle"><?php echo $activeSocialPositionSubTitle;?></h3>
           <?php if( $activeSocialPositionGallery ):?>
               <div class="slider-wrapper" id="active-social-position-slider">
@@ -217,7 +217,7 @@
   <section class="online-space indent-top-big indent-bottom-small animation-tracking">
     <div class="container">
       <div class="row first-up">
-        <h2 class="block-title big-title big-margin upper-title col-xl-8 col-lg-9"><?php echo $onlineSpaceBlockTitle;?></h2>
+        <h2 class="block-title big-title big-margin upper-title col-xl-9 col-lg-9"><?php echo $onlineSpaceBlockTitle;?></h2>
         <p class="subtitle big-subtitle col-lx-5 col-lg-7"><?php echo $onlineSpaceText;?></p>
       </div>
       <div class="row second-up">
@@ -256,7 +256,7 @@
   <section class="education-model indent-top-small indent-bottom-small animation-tracking">
     <div class="container">
       <div class="row first-up">
-        <h2 class="block-title big-title upper-title big-margin col-12"><?php echo $educationModelBlockTitle;?></h2>
+        <h2 class="block-title big-title upper-title larg-margin col-12"><?php echo $educationModelBlockTitle;?></h2>
       </div>
       <div class="row justify-content-center second-up">
         <?php foreach( $educationModelList as $item ):?>
@@ -397,525 +397,531 @@
 	  if ( $studySchedulesBlockTitle ):
 ?>
   <section class="study-schedules indent-top-small animation-tracking">
-    <div class="container">
-      <div class="row first-up">
-        <h2 class="block-title upper-title small-title big-margin text-center col-12"><?php echo $studySchedulesBlockTitle;?></h2>
-        <?php if( $studySchedulesSubtitle ):?>
-          <h3 class="subtitle big-subtitle text-center col-12"><?php echo $studySchedulesSubtitle;?></h3>
-        <?php endif;?>
-	      <?php if( $studySchedulesClasses ):?>
-          <p class="classes col-12 text-center"><?php echo $studySchedulesClasses;?></p>
-	      <?php endif;?>
+    <div class="white-side">
+      <div class="container">
+        <div class="row first-up">
+          <h2 class="block-title upper-title small-title big-margin text-center col-12"><?php echo $studySchedulesBlockTitle;?></h2>
+			    <?php if( $studySchedulesSubtitle ):?>
+            <h3 class="subtitle big-subtitle text-center col-12"><?php echo $studySchedulesSubtitle;?></h3>
+			    <?php endif;?>
+			    <?php if( $studySchedulesClasses ):?>
+            <p class="classes col-12 text-center"><?php echo $studySchedulesClasses;?></p>
+			    <?php endif;?>
+        </div>
+        <div class="row second-up">
+          <ul class="nav nav-tabs col-12">
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#schedules-active"><?php echo esc_html( pll__( 'Активний розклад' ) ); ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#schedules-pending"><?php echo esc_html( pll__( 'Планується до відкриття' ) ); ?></a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="row second-up">
-        <ul class="nav nav-tabs col-12">
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#schedules-active"><?php echo esc_html( pll__( 'Активний розклад' ) ); ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#schedules-pending"><?php echo esc_html( pll__( 'Планується до відкриття' ) ); ?></a>
-          </li>
-        </ul>
-      </div>
-      <div class="row second-up">
-        <div class="tab-content indent-bottom-small col-12">
-          <div class="tab-pane fade" id="schedules-active">
-            <div class="inner">
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Понеділок' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Пн' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $monSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_mon'.ua_teens_lang_prefix());
+    </div>
+    <div class="dark-side">
+      <div class="container">
+        <div class="row second-up">
+          <div class="tab-content indent-bottom-small col-12">
+            <div class="tab-pane fade" id="schedules-active">
+              <div class="inner">
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Понеділок' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Пн' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $monSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_mon'.ua_teens_lang_prefix());
 
-			            if ( $monSchedulesList ):
+									    if ( $monSchedulesList ):
 
-				            $groupCount = count($monSchedulesList);
+										    $groupCount = count($monSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $monSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $monSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $monSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $monSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
 
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Вівторок' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Вт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $tueSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_tue'.ua_teens_lang_prefix());
+
+									    if ( $tueSchedulesList ):
+
+										    $groupCount = count($tueSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $tueSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $tueSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Середа' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Ср' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $wedSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_wed'.ua_teens_lang_prefix());
+
+									    if ( $wedSchedulesList ):
+
+										    $groupCount = count($wedSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $wedSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $wedSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Четвер' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Чт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $thuSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_thu'.ua_teens_lang_prefix());
+
+									    if ( $thuSchedulesList ):
+
+										    $groupCount = count($thuSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $thuSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $thuSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'П’ятниця' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Пт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $friSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_fri'.ua_teens_lang_prefix());
+
+									    if ( $friSchedulesList ):
+
+										    $groupCount = count($friSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $friSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $friSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Субота' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Сб' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $satSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_sat'.ua_teens_lang_prefix());
+
+									    if ( $satSchedulesList ):
+
+										    $groupCount = count($satSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $satSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $satSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
+                </div>
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Неділя' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Нд' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $sanSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_san'.ua_teens_lang_prefix());
+
+									    if ( $sanSchedulesList ):
+
+										    $groupCount = count($sanSchedulesList);
+
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $sanSchedulesList as $itemOne ):?>
+                            <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $sanSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          </div>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
               </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Вівторок' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Вт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $tueSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_tue'.ua_teens_lang_prefix());
 
-			            if ( $tueSchedulesList ):
-
-				            $groupCount = count($tueSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $tueSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $tueSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Середа' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Ср' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $wedSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_wed'.ua_teens_lang_prefix());
-
-			            if ( $wedSchedulesList ):
-
-				            $groupCount = count($wedSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $wedSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $wedSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Четвер' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Чт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $thuSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_thu'.ua_teens_lang_prefix());
-
-			            if ( $thuSchedulesList ):
-
-				            $groupCount = count($thuSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $thuSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $thuSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'П’ятниця' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Пт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $friSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_fri'.ua_teens_lang_prefix());
-
-			            if ( $friSchedulesList ):
-
-				            $groupCount = count($friSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $friSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $friSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Субота' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Сб' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $satSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_sat'.ua_teens_lang_prefix());
-
-			            if ( $satSchedulesList ):
-
-				            $groupCount = count($satSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $satSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $satSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Неділя' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Нд' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $sanSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_active_san'.ua_teens_lang_prefix());
-
-			            if ( $sanSchedulesList ):
-
-				            $groupCount = count($sanSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $sanSchedulesList as $itemOne ):?>
-                                <p><span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span></p>
-				              <?php endforeach;?>
-                          </div>
-			            <?php else:?>
-				            <?php foreach( $sanSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
-                </div>
-              </div>
             </div>
+            <div class="tab-pane active" id="schedules-pending">
+              <div class="inner">
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Понеділок' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Пн' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $monSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_mon'.ua_teens_lang_prefix());
 
-          </div>
-          <div class="tab-pane active" id="schedules-pending">
-            <div class="inner">
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Понеділок' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Пн' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $monSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_mon'.ua_teens_lang_prefix());
+									    if ( $monSchedulesList ):
 
-			            if ( $monSchedulesList ):
+										    $groupCount = count($monSchedulesList);
 
-				            $groupCount = count($monSchedulesList);
-
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $monSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $monSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $monSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $monSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
 
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Вівторок' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Вт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $tueSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_tue'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Вівторок' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Вт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $tueSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_tue'.ua_teens_lang_prefix());
 
-			            if ( $tueSchedulesList ):
+									    if ( $tueSchedulesList ):
 
-				            $groupCount = count($tueSchedulesList);
+										    $groupCount = count($tueSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $tueSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $tueSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $tueSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $tueSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Середа' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Ср' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $wedSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_wed'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Середа' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Ср' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $wedSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_wed'.ua_teens_lang_prefix());
 
-			            if ( $wedSchedulesList ):
+									    if ( $wedSchedulesList ):
 
-				            $groupCount = count($wedSchedulesList);
+										    $groupCount = count($wedSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $wedSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $wedSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $wedSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $wedSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Четвер' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Чт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $thuSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_thu'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Четвер' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Чт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $thuSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_thu'.ua_teens_lang_prefix());
 
-			            if ( $thuSchedulesList ):
+									    if ( $thuSchedulesList ):
 
-				            $groupCount = count($thuSchedulesList);
+										    $groupCount = count($thuSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $thuSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $thuSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $thuSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $thuSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'П’ятниця' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Пт' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $friSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_fri'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'П’ятниця' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Пт' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $friSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_fri'.ua_teens_lang_prefix());
 
-			            if ( $friSchedulesList ):
+									    if ( $friSchedulesList ):
 
-				            $groupCount = count($friSchedulesList);
+										    $groupCount = count($friSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $friSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $friSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $friSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $friSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Субота' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Сб' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $satSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_sat'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Субота' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Сб' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $satSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_sat'.ua_teens_lang_prefix());
 
-			            if ( $satSchedulesList ):
+									    if ( $satSchedulesList ):
 
-				            $groupCount = count($satSchedulesList);
+										    $groupCount = count($satSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $satSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $satSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $satSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $satSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
-              </div>
-              <div class="day">
-                <p class="name">
-                  <span class="desc"><?php echo esc_html( pll__( 'Неділя' ) ); ?></span>
-                  <span class="mob"><?php echo esc_html( pll__( 'Нд' ) ); ?></span>
-                </p>
-                <div class="schedules">
-		            <?php
-			            $sanSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_san'.ua_teens_lang_prefix());
+                <div class="day">
+                  <p class="name">
+                    <span class="desc"><?php echo esc_html( pll__( 'Неділя' ) ); ?></span>
+                    <span class="mob"><?php echo esc_html( pll__( 'Нд' ) ); ?></span>
+                  </p>
+                  <div class="schedules">
+								    <?php
+									    $sanSchedulesList = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_schedules_pending_san'.ua_teens_lang_prefix());
 
-			            if ( $sanSchedulesList ):
+									    if ( $sanSchedulesList ):
 
-				            $groupCount = count($sanSchedulesList);
+										    $groupCount = count($sanSchedulesList);
 
-				            ?>
-				            <?php if( $groupCount < 2 ):?>
-                          <div class="item one-item" >
-				              <?php foreach( $sanSchedulesList as $itemOne ):?>
-                                <p>
-                                  <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                  <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
-                                </p>
-				              <?php endforeach;?>
+										    ?>
+										    <?php if( $groupCount < 2 ):?>
+                        <div class="item one-item" >
+											    <?php foreach( $sanSchedulesList as $itemOne ):?>
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemOne['time_start'];?></span> - <span><?php echo $itemOne['time_stop'];?></span>
+                            </p>
+											    <?php endforeach;?>
+                        </div>
+									    <?php else:?>
+										    <?php foreach( $sanSchedulesList as $itemMany ):?>
+                          <div class="item many-item" >
+                            <p>
+                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                            </p>
                           </div>
-			            <?php else:?>
-				            <?php foreach( $sanSchedulesList as $itemMany ):?>
-                            <div class="item many-item" >
-                              <p>
-                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                              </p>
-                            </div>
-				            <?php endforeach;?>
-			            <?php endif;?>
-			            <?php else:?>
-                          <div class="item item-none"></div>
-			            <?php endif;?>
+										    <?php endforeach;?>
+									    <?php endif;?>
+									    <?php else:?>
+                        <div class="item item-none"></div>
+									    <?php endif;?>
+                  </div>
                 </div>
               </div>
             </div>
@@ -923,6 +929,7 @@
         </div>
       </div>
     </div>
+
   </section>
 <?php endif;?>
 
@@ -957,7 +964,7 @@
 	              <?php /*if( $priceCurrency == 'EUR' ):*/?>
                   €<?php /*echo $educationPrice;*/?>
 	              --><?php /*endif;*/?>
-                ₴ <?php echo $educationPrice;?>
+                ₴<?php echo $educationPrice;?>
               </p>
               <p class="lesson-quantity"><?php echo carbon_get_theme_option('ua_teens_mons_lesson'.ua_teens_lang_prefix());?></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none">
