@@ -19,6 +19,7 @@
 		         ->add_fields( array(
 			         Field::make( 'text', 'ua_teens_team_men_main_direction'.ua_teens_lang_prefix(), 'Позиція у напрямку'),
 			         Field::make( 'text', 'ua_teens_team_men_main_position'.ua_teens_lang_prefix(), 'Спеціалізація'),
+			         Field::make_image('ua_teens_team_men_main_screen_pic'.ua_teens_lang_prefix(), 'Зображення на головному екрані')
 		         ));
 
 		Container::make( 'post_meta', __('Освіта') )
@@ -29,18 +30,23 @@
 
 		         ->add_fields( array(
 			         Field::make( 'text', 'ua_teens_team_men_education_university'.ua_teens_lang_prefix(), 'Місце навчання'),
-			         Field::make_image('ua_teens_team_men_education_mein_pic'.ua_teens_lang_prefix(), 'Головне зображення блоку')
-			            ->set_value_type('url'),
 			         Field::make_rich_text('ua_teens_team_men_education_text'.ua_teens_lang_prefix(), 'Текс блоку'),
-			         Field::make_image('ua_teens_team_men_education_left_pic'.ua_teens_lang_prefix(), 'Зображення ліворуч')
-			              ->set_value_type('url'),
-			         Field::make_image('ua_teens_team_men_education_center_pic'.ua_teens_lang_prefix(), 'Зображення по центру')
-			              ->set_value_type('url'),
-			         Field::make_image('ua_teens_team_men_education_right_pic'.ua_teens_lang_prefix(), 'Зображення праворуч')
-			              ->set_value_type('url'),
+			         Field::make_rich_text('ua_teens_team_men_education_quote'.ua_teens_lang_prefix(), 'Текст цитати'),
+			         Field::make_complex('ua_teens_team_men_education_main_pic_list'.ua_teens_lang_prefix(), 'Галірея з головним зображенням блоку')
+			          ->add_fields(array(
+			          	Field::make_image('image', 'Зображення')
+			          )),
+			         Field::make_complex('ua_teens_team_men_education_bottom_pic_list'.ua_teens_lang_prefix(), 'Галірея з великим нижнім зображенням блоку')
+			              ->add_fields(array(
+				              Field::make_image('image', 'Зображення')
+			              )),
+			         Field::make_complex('ua_teens_team_men_education_bottom__mini_pic_list'.ua_teens_lang_prefix(), 'Галірея з малим нижнім зображенням блоку')
+			              ->add_fields(array(
+				              Field::make_image('image', 'Зображення')
+			              )),
 		         ));
 
-		Container::make( 'post_meta', __('Блок з цетатою') )
+		Container::make( 'post_meta', __('Блок роботи/програми') )
 		         ->where( function( $homeFields ) {
 			         $homeFields->where( 'post_type', '=', 'team' );
 			         $homeFields->where( 'post_template', '=', 'template-team-men.php' );
@@ -48,28 +54,51 @@
 
 		         ->add_fields( array(
 
-			         Field::make_image('ua_teens_team_men_quote_image'.ua_teens_lang_prefix(), 'Зображення блоку')
-			              ->set_value_type('url'),
-			         Field::make_rich_text('ua_teens_team_men_quote_text'.ua_teens_lang_prefix(), 'Текс цитати'),
-
-		         ));
-
-		Container::make( 'post_meta', __('Блок про професію') )
-		         ->where( function( $homeFields ) {
-			         $homeFields->where( 'post_type', '=', 'team' );
-			         $homeFields->where( 'post_template', '=', 'template-team-men.php' );
-		         } )
-
-		         ->add_fields( array(
-
-			         Field::make_image('ua_teens_team_profession_image'.ua_teens_lang_prefix(), 'Зображення блоку')
-			              ->set_value_type('url'),
-			         Field::make_rich_text('ua_teens_team_men_profession_text'.ua_teens_lang_prefix(), 'інформаційний текст'),
-			         Field::make_complex('ua_teens_team_men_profession_program_list'.ua_teens_lang_prefix(), 'Перелік технологій та програм')
-			            ->add_fields( array(
-			            	Field::make_image('image', 'Логотип продукту або технрології')
-				                ->set_value_type('url')
-			            ))
+			         Field::make_select('ua_teens_team_programs_works_type'.ua_teens_lang_prefix(), 'Оберіть тип контенту')
+			              ->set_options(array(
+			              	'works'    => 'Роботи',
+				              'programs' => 'Програми'
+			              )),
+			         Field::make_text('ua_teens_team_programs_works_work_text'.ua_teens_lang_prefix(), 'Текст про перегляд робіт')
+				         ->set_conditional_logic( array(
+					         'relation' => 'AND',
+					         array(
+						         'field' => 'ua_teens_team_programs_works_type'.ua_teens_lang_prefix(),
+						         'value' => 'works',
+						         'compare' => '=',
+					         )
+				         ) ),
+			         Field::make_text('ua_teens_team_programs_works_work_text_link'.ua_teens_lang_prefix(), 'Текст для переходу по посиланню')
+			              ->set_conditional_logic( array(
+				              'relation' => 'AND',
+				              array(
+					              'field' => 'ua_teens_team_programs_works_type'.ua_teens_lang_prefix(),
+					              'value' => 'works',
+					              'compare' => '=',
+				              )
+			              ) ),
+			         Field::make_text('ua_teens_team_programs_works_work_link'.ua_teens_lang_prefix(), 'Посилання')
+				            ->set_attribute('type', 'url')
+			              ->set_conditional_logic( array(
+				              'relation' => 'AND',
+				              array(
+					              'field' => 'ua_teens_team_programs_works_type'.ua_teens_lang_prefix(),
+					              'value' => 'works',
+					              'compare' => '=',
+				              )
+			              ) ),
+			         Field::make_complex('ua_teens_team_programs_works_programs_list'.ua_teens_lang_prefix(), 'Перелік програм')
+			              ->set_conditional_logic( array(
+				              'relation' => 'AND',
+				              array(
+					              'field' => 'ua_teens_team_programs_works_type'.ua_teens_lang_prefix(),
+					              'value' => 'programs',
+					              'compare' => '=',
+				              )
+			              ) )
+			              ->add_fields(array(
+			              	Field::make_image('program_logo', 'Логотип програми')
+			              ))
 
 		         ));
 
@@ -81,10 +110,8 @@
 
 		         ->add_fields( array(
 
-			         Field::make_image('ua_teens_team_call_left_image'.ua_teens_lang_prefix(), 'Зображення ліворуч')
-			              ->set_value_type('url'),
-			         Field::make_image('ua_teens_team_call_right_image'.ua_teens_lang_prefix(), 'Зображення праворуч')
-			              ->set_value_type('url'),
+			         Field::make_image('ua_teens_team_call_left_image'.ua_teens_lang_prefix(), 'Зображення ліворуч'),
+			         Field::make_image('ua_teens_team_call_right_image'.ua_teens_lang_prefix(), 'Зображення праворуч'),
 			         Field::make_text('ua_teens_team_men_call_text'.ua_teens_lang_prefix(), 'Заклик займатися з людиною'),
 
 		         ));

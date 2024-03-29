@@ -316,8 +316,24 @@
 		         } )
 
 		         ->add_fields( array(
-			         Field::make('text', 'home_ua_teens_team_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
-			         Field::make_rich_text('home_ua_teens_team_text'.ua_teens_lang_prefix(), 'Текст блоку'),
+			         Field::make('text', 'ua_teens_home_team_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
+			         Field::make('text', 'ua_teens_home_team_subtitle'.ua_teens_lang_prefix(), 'Підзаголовок блоку'),
+			         Field::make_rich_text('ua_teens_home_team_text'.ua_teens_lang_prefix(), 'Текст блоку'),
+			         Field::make_text('ua_teens_home_team_page_link'.ua_teens_lang_prefix(), 'Посилання на сторінку команди')
+			          ->set_attribute('type', 'url')
+
+		         ));
+
+		Container::make( 'post_meta', __('Блок F.A.Q') )
+		         ->where( function( $homeFields ) {
+			         $homeFields->where( 'post_type', '=', 'page' );
+			         $homeFields->where( 'post_template', '=', 'template-home.php' );
+		         } )
+
+		         ->add_fields( array(
+			         Field::make('text', 'ua_teens_home_faq_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
+			         Field::make('text', 'ua_teens_home_faq_subtitle'.ua_teens_lang_prefix(), 'Підзаголовок блоку'),
+
 
 		         ));
 	}

@@ -202,6 +202,80 @@
 				false
 			);
 
+			pll_register_string(
+				'ua_teens_btn_all_team',
+				'Уся команда',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_education',
+				'Освіта',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_programs_title1',
+				'Працює в таких',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_programs_title2',
+				'програмах:',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_btn_send_ap',
+				'Надіслати заявку',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_btn_ind_consult',
+				'Індивідуальна консультація',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_call_title1',
+				'Хочеш',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_call_title2',
+				'стати',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_men_call_title3',
+				'студентом',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_team_all_text',
+				'Уся команда',
+				'Переклади',
+				false
+			);
+
+
+
+
+
 
 			pll_register_string(
 				'ua_teens_placeholder_name',

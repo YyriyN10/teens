@@ -1020,6 +1020,73 @@
   </section>
 <?php endif;?>
 
+  <!-- Our team -->
+<?php
+  $ourTeamBlockTilte = carbon_get_post_meta(get_the_ID(), 'ua_teens_home_team_title'.ua_teens_lang_prefix());
+  $ourTeamSubtitle = carbon_get_post_meta(get_the_ID(), 'ua_teens_home_team_subtitle'.ua_teens_lang_prefix());
+  $ourTeamText = carbon_get_post_meta(get_the_ID(),'ua_teens_home_team_text'.ua_teens_lang_prefix());
+  $ourTeamPageLink = carbon_get_post_meta(get_the_ID(),'ua_teens_home_team_page_link'.ua_teens_lang_prefix());
+
+	$countWorkers = wp_count_posts( 'team' )->publish;
+
+  if ( $aboutUsBlockTile && $ourTeamPageLink && $countWorkers > 0 ):
+?>
+  <section class="our-team indent-top-small">
+    <div class="container">
+      <div class="row">
+        <h2 class="block-title small-title big-margin upper-title col-xl-8 col-lg-9"><?php echo $ourTeamBlockTilte;?></h2>
+        <h3 class="subtitle small-subtitle col-xl-10 col-lg-11"><?php echo $ourTeamSubtitle;?></h3>
+        <div class="text col-xl-10 col-lg-11"><?php echo wpautop($ourTeamText);?></div>
+      </div>
+      <div class="row ">
+        <div class="our-team__list col-12">
+	        <?php
+		        $teamArgs = array(
+			        'posts_per_page' => 3,
+			        'orderby' 	 => 'date',
+			        'post_type'  => 'team',
+			        'post_status'    => 'publish'
+		        );
+
+		        $teamList = new WP_Query( $teamArgs );
+
+		        if ( $teamList->have_posts() ) :
+
+			        while ( $teamList->have_posts() ) : $teamList->the_post();
+				        ?>
+                <a href="<?php the_permalink();?>" class="our-team__men ">
+                  <img
+                      src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>"
+                      alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);?>"
+                  >
+                  <span class="info">
+                      <span class="name"><?php the_title();?></span>
+                      <span class="position"><?php echo carbon_get_post_meta(get_the_ID(), 'ua_teens_team_men_main_direction'.ua_teens_lang_prefix());?></span>
+                    </span>
+                </a>
+
+			        <?php endwhile;?>
+		        <?php endif; ?>
+	        <?php wp_reset_postdata(); ?>
+        </div>
+
+      </div>
+      <?php if( $countWorkers > 3 ):?>
+        <div class="row">
+          <div class="col-12 text-center">
+            <a href="<?php echo $ourTeamPageLink;?>" class="button orange-btn">
+				      <?php echo esc_html( pll__( 'Уся команда' ) ); ?>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="#F9F9F9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      <?php endif;?>
+    </div>
+  </section>
+<?php endif;?>
+
    <!-- Student works -->
 <?php
 	$countWorks = wp_count_posts( 'student_works' )->publish;
@@ -1082,6 +1149,113 @@
      </div>
    </section>
  <?php endif;?>
+
+  <!-- F.A.Q -->
+   <?php
+   	$faqArgs = array(
+   		'posts_per_page' => -1,
+   		'orderby' 	 => 'date',
+   		'post_type'  => 'faq',
+   		'post_status'    => 'publish'
+   	);
+
+   	$i = 0;
+   	$j = 0;
+
+   	$faqList = new WP_Query( $faqArgs );
+
+   		  if ( $faqList->have_posts() ) :?>
+          <section class="our-faq indent-top-small indent-bottom-small">
+            <div class="container">
+              <div class="row">
+                <h2 class="block-title upper-title big-margin small-title col-12 text-center">
+                  <?php echo carbon_get_post_meta(get_the_ID(), 'ua_teens_home_faq_title'.ua_teens_lang_prefix());;?>
+                </h2>
+                <p class="subtitle col-12 text-center big-subtitle">
+	                <?php echo carbon_get_post_meta(get_the_ID(), 'ua_teens_home_faq_subtitle'.ua_teens_lang_prefix());;?>
+                </p>
+              </div>
+              <div class="row">
+                <div class="accordion col-12" id="accordion-faq">
+                  <div class="left-column">
+                    <?php while ( $faqList->have_posts() ) : $faqList->the_post(); $i++;?>
+
+                        <?php if( $i % 2 == 0 ):?>
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="card-link collapsed " data-toggle="collapse" href="#faq<?php the_ID();?>">
+                                <svg class="indication indication-pic" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                  <g clip-path="url(#clip0_954_1584)">
+                                    <circle cx="16" cy="16" r="15.5" stroke="#F64B0A"/>
+                                    <circle class="active" cx="15" cy="15" r="5.5" fill="#F64B0A" stroke="#F64B0A"/>
+                                    <path d="M15.6457 9C19.3141 9 22.2913 11.9773 22.2913 15.6457C22.2913 19.3141 19.3141 22.2913 15.6457 22.2913C11.9773 22.2913 9 19.3141 9 15.6457C9 11.9773 11.9773 9 15.6457 9ZM15.6457 20.8145C18.5011 20.8145 20.8145 18.5011 20.8145 15.6457C20.8145 12.7902 18.5011 10.4768 15.6457 10.4768C12.7902 10.4768 10.4768 12.7902 10.4768 15.6457C10.4768 18.5011 12.7902 20.8145 15.6457 20.8145ZM21.911 20.8669L24 22.9552L22.9552 24L20.8669 21.911L21.911 20.8669Z" fill="#F64B0A"/>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_954_1584">
+                                      <rect width="32" height="32" fill="white"/>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                                <svg class="indication indication-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                  <path d="M6 9L12 15L18 9" stroke="#1D1D1B" stroke-width="3"/>
+                                </svg>
+                                <?php the_title();?>
+                              </a>
+                            </div>
+                            <div id="faq<?php the_ID();?>" class="collapse" data-parent="#accordion-faq">
+                              <div class="card-body">
+                                <?php the_content();?>
+                              </div>
+                            </div>
+                          </div>
+                        <?php endif;?>
+
+                    <?php endwhile;?>
+	                  <?php wp_reset_postdata(); ?>
+                  </div>
+                  <div class="right-column">
+		                <?php while ( $faqList->have_posts() ) : $faqList->the_post(); $j++;?>
+
+			                <?php if( $j % 2 !== 0 ):?>
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="card-link collapsed " data-toggle="collapse" href="#faq<?php the_ID();?>">
+                              <svg class="indication indication-pic" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <g clip-path="url(#clip0_954_1584)">
+                                  <circle cx="16" cy="16" r="15.5" stroke="#F64B0A"/>
+                                  <circle class="active" cx="15" cy="15" r="5.5" fill="#F64B0A" stroke="#F64B0A"/>
+                                  <path d="M15.6457 9C19.3141 9 22.2913 11.9773 22.2913 15.6457C22.2913 19.3141 19.3141 22.2913 15.6457 22.2913C11.9773 22.2913 9 19.3141 9 15.6457C9 11.9773 11.9773 9 15.6457 9ZM15.6457 20.8145C18.5011 20.8145 20.8145 18.5011 20.8145 15.6457C20.8145 12.7902 18.5011 10.4768 15.6457 10.4768C12.7902 10.4768 10.4768 12.7902 10.4768 15.6457C10.4768 18.5011 12.7902 20.8145 15.6457 20.8145ZM21.911 20.8669L24 22.9552L22.9552 24L20.8669 21.911L21.911 20.8669Z" fill="#F64B0A"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_954_1584">
+                                    <rect width="32" height="32" fill="white"/>
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <svg class="indication indication-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9L12 15L18 9" stroke="#1D1D1B" stroke-width="3"/>
+                              </svg>
+							                <?php the_title();?>
+                            </a>
+                          </div>
+                          <div id="faq<?php the_ID();?>" class="collapse" data-parent="#accordion-faq">
+                            <div class="card-body">
+							                <?php the_content();?>
+                            </div>
+                          </div>
+                        </div>
+			                <?php endif;?>
+
+		                <?php endwhile;?>
+		                <?php wp_reset_postdata(); ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+   	<?php endif; ?>
+   <?php wp_reset_postdata(); ?>
+
 
 <?php get_template_part('template-parts/block-contacts');?>
 

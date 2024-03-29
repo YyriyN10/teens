@@ -433,6 +433,92 @@ jQuery(function($) {
 
   }
 
+  /**
+   * Team men automatic sliders
+   */
+
+    if ( $('#men-big-gallery') ){
+
+      $('#men-big-gallery').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        draggable: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        swipe: false,
+        touchMove: false
+      });
+    }
+
+    if ( $('#men-main-gallery') ){
+
+      $('#men-main-gallery').slick({
+        autoplay: true,
+        autoplaySpeed: 1700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        draggable: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        swipe: false,
+        touchMove: false
+      });
+    }
+
+    if ( $('#men-small-gallery') ){
+
+      $('#men-small-gallery').slick({
+        autoplay: true,
+        autoplaySpeed: 1400,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        draggable: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        swipe: false,
+        touchMove: false
+      });
+    }
+
+  /**
+   * Team change category
+   */
+
+  if ( $('#team-list') ){
+
+    $('.directions-list .item').on('click', function (e) {
+      e.preventDefault();
+
+      $('.directions-list .item.active').removeClass('active');
+
+      $(this).addClass('active');
+
+      let catId = $(this).attr('data-catid');
+
+      let data = {
+        action: 'change_team_direction',
+        catId: catId
+      };
+
+      $.post( ua_teens_ajax.url, data, function(response) {
+
+        if( $.trim(response) !== ''){
+
+          $('#team-list').html(response);
+        }
+      });
+
+    })
+  }
+
   //Смена категории курсов
 
   /*jQuery('.page-template-template-home .curses-cat-wrapper .cat').on('click', function (e) {

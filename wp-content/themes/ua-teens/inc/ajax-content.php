@@ -169,3 +169,90 @@
 
 		wp_die();
 	}
+
+	/**
+   * Team direction change
+   */
+
+	add_action('wp_ajax_change_team_direction', 'change_team_direction_callback');
+	add_action('wp_ajax_nopriv_change_team_direction', 'change_team_direction_callback');
+
+	function change_team_direction_callback(){
+
+		$catId = $_POST['catId'];
+
+		if ( $catId == 0 ):?>
+			<?php
+			$teamArgs = array(
+				'posts_per_page' => -1,
+				'orderby' 	 => 'date',
+				'post_type'  => 'team',
+				'post_status'    => 'publish'
+			);
+
+			$teamList = new WP_Query( $teamArgs );
+
+			if ( $teamList->have_posts() ) :
+
+				while ( $teamList->have_posts() ) : $teamList->the_post();
+					?>
+          <a href="<?php the_permalink();?>" target="_blank" class="team-men">
+            <img
+                src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>"
+                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);?>"
+            >
+            <span class="info">
+                      <span class="name"><?php the_title();?></span>
+                      <span class="position"><?php echo carbon_get_post_meta(get_the_ID(), 'ua_teens_team_men_main_direction'.ua_teens_lang_prefix());?></span>
+                    </span>
+          </a>
+				<?php endwhile;?>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
+      <?php else:?>
+      <?php
+			$teamArgs = array(
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'team-tax',
+						'field' => 'id',
+						'lang' => false,
+						'suppress_filters' => false,
+						'terms' => $catId
+
+					)
+				),
+				'post_type' => 'team',
+				'orderby' 	 => 'date',
+				'suppress_filters' => false,
+				'lang' => false,
+				'posts_per_page' => -1
+			);
+
+			$teamList = new WP_Query( $teamArgs );
+
+			if ( $teamList->have_posts() ) :
+
+				while ( $teamList->have_posts() ) : $teamList->the_post();
+        ?>
+          <a href="<?php the_permalink();?>" target="_blank" class="team-men">
+            <img
+                src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>"
+                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);?>"
+            >
+            <span class="info">
+                      <span class="name"><?php the_title();?></span>
+                      <span class="position"><?php echo carbon_get_post_meta(get_the_ID(), 'ua_teens_team_men_main_direction'.ua_teens_lang_prefix());?></span>
+                    </span>
+          </a>
+				<?php endwhile;?>
+			<?php endif; ?>
+      <?php endif;?>
+
+
+
+    <?php
+
+		wp_die();
+	}
+

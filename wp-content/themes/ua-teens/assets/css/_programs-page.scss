@@ -89,9 +89,16 @@
     padding-right: 0;
   }
 
+  .slick-track{
+    display: flex;
+  }
+
   .slide{
     margin: 0 16px;
     position: relative;
+    display: flex;
+    align-items: self-end;
+    height: auto;
 
     .pic-wrapper{
       width: 424px;
@@ -115,14 +122,16 @@
     }
 
     .text-wrapper{
-      position: absolute;
+      /*position: absolute;*/
       z-index: 2;
-      right: 0;
+      /*right: 0;*/
       bottom: 24px;
       width: 424px;
       padding: 32px;
       background: $color-white;
-      //box-shadow: -6px 6px 19px 0px rgba(0, 0, 0, 0.03), -22px 26px 34px 0px rgba(0, 0, 0, 0.02), -50px 58px 46px 0px rgba(0, 0, 0, 0.01), -89px 103px 54px 0px rgba(0, 0, 0, 0.01), -139px 161px 60px 0px rgba(0, 0, 0, 0.00);
+      margin-left: -40%;
+      margin-bottom: 24px;
+      box-shadow: -6px 6px 19px 0px rgba(0, 0, 0, 0.03), -22px 26px 34px 0px rgba(0, 0, 0, 0.02), -50px 58px 46px 0px rgba(0, 0, 0, 0.01), -89px 103px 54px 0px rgba(0, 0, 0, 0.01), -139px 161px 60px 0px rgba(0, 0, 0, 0.00);
 
       @media(max-width: 1200px){
         width: 360px;
@@ -503,7 +512,7 @@
           animation-delay: 5.7s;
           animation-name: count-flash;
           animation-iteration-count: 1;
-          animation-duration: 1.8s;
+          animation-duration: 1.5s;
 
           svg{
 
@@ -521,23 +530,208 @@
           animation-duration: 1.5s;
         }
       }
+
       &:nth-child(6){
         .pretty-number{
-          animation-delay: 6.2s;
+          animation-delay: 7.2s;
           animation-name: count-flash;
           animation-iteration-count: 1;
           animation-duration: 1.5s;
 
           svg{
-            animation-delay: 6.2s;
+            animation-delay: 7.2s;
             animation-name: arrow-flash;
             animation-iteration-count: 1;
-            animation-duration: 1.6s;
+            animation-duration: 1.5s;
           }
         }
 
         .subtitle{
-          animation-delay: 6.2s;
+          animation-delay: 7.2s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(7){
+        .pretty-number{
+          animation-delay: 8.7s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 8.7s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 8.7s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(8){
+        .pretty-number{
+          animation-delay: 10.2s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 10.2s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 10.2s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(9){
+        .pretty-number{
+          animation-delay: 11.7s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 11.7s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 11.7s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(10){
+        .pretty-number{
+          animation-delay: 13.2s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 13.2s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 13.2s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(11){
+        .pretty-number{
+          animation-delay: 14.7s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 14.7s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 14.7s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(12){
+        .pretty-number{
+          animation-delay: 16.2s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 16.2s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 16.2s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(13){
+        .pretty-number{
+          animation-delay: 18.7s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 18.7s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 18.7s;
+          animation-name: text-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+        }
+      }
+
+      &:nth-child(14){
+        .pretty-number{
+          animation-delay: 21.2s;
+          animation-name: count-flash;
+          animation-iteration-count: 1;
+          animation-duration: 1.5s;
+
+          svg{
+            animation-delay: 21.2s;
+            animation-name: arrow-flash;
+            animation-iteration-count: 1;
+            animation-duration: 1.5s;
+          }
+        }
+
+        .subtitle{
+          animation-delay: 21.2s;
           animation-name: text-flash;
           animation-iteration-count: 1;
           animation-duration: 1.5s;
@@ -655,18 +849,43 @@
         opacity: 1;
       }
 
-      :nth-child(8){
+      &:nth-child(8){
         transition-delay: 1.6s;
         opacity: 1;
       }
 
-      :nth-child(9){
+      &:nth-child(9){
         transition-delay: 1.8s;
         opacity: 1;
       }
 
-      :nth-child(10){
+      &:nth-child(10){
         transition-delay: 2s;
+        opacity: 1;
+      }
+
+      &:nth-child(11){
+        transition-delay: 2.2s;
+        opacity: 1;
+      }
+
+      &:nth-child(12){
+        transition-delay: 2.4s;
+        opacity: 1;
+      }
+
+      &:nth-child(13){
+        transition-delay: 2.6s;
+        opacity: 1;
+      }
+
+      &:nth-child(14){
+        transition-delay: 2.8s;
+        opacity: 1;
+      }
+
+      &:nth-child(15){
+        transition-delay: 3s;
         opacity: 1;
       }
     }

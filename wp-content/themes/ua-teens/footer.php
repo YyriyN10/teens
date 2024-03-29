@@ -17,7 +17,7 @@
 
 </main>
 
-	<footer class="site-footer">
+	<footer class="site-footer indent-top-small">
 		<div class="container">
       <div class="row">
         <div class="site-footer__content col-12 d-flex align-items-start">

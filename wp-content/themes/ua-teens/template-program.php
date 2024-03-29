@@ -21,7 +21,7 @@
 	$programMainScreenPic = carbon_get_post_meta(get_the_ID(), 'ua_teens_page_program_main_screen_pic'.ua_teens_lang_prefix());
 	$programMainScreenBtnLink = carbon_get_post_meta(get_the_ID(), 'ua_teens_page_program_main_screen_btn_link'.ua_teens_lang_prefix());
 
-	if ( $programMainScreenPic  && $programMainScreenCall ):
+	if ( $programMainScreenPic  ):
 ?>
 	<section class="program-main-screen" style="background-image: url(<?php the_post_thumbnail_url();?>)">
 	  <div class="container">
@@ -172,7 +172,12 @@
           <?php foreach( $studentWilKnowList as $item ): $i++;?>
             <li class="student-wil-know__item">
               <p class="pretty-number">
-                0<?php echo $i;?>
+                <?php if( $i < 10 ):?>
+                  0<?php echo $i;?>
+                <?php else:?>
+                  <?php echo $i;?>
+                <?php endif;?>
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path d="M30 16L20 10.2265V21.7735L30 16ZM4 17L21 17V15L4 15V17Z" fill="#1D1D1B"/>
                 </svg>
