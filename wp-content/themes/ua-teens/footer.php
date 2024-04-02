@@ -61,11 +61,22 @@
             </svg>
             <?php get_template_part('template-parts/social');?>
 
+            <div class="send-seo">
+              <h3><?php echo esc_html( pll__( 'Написати СЕО' ) ); ?></h3>
+              <p><?php echo esc_html( pll__( 'Ми працюємо, щоб покращувати якість роботи. Якщо у вас є звернення, коментар — ви можете залишити його у цій формі.' ) ); ?></p>
+              <a href="#" rel="nofollow" class="button orange-btn" data-toggle="modal" data-target="#formModal">
+                <?php echo esc_html( pll__( 'Написати' ) ); ?>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 18L15 12L9 6" stroke="#F9F9F9"/>
+                </svg>
+              </a>
+            </div>
+
           </div>
-           <!--<div class="site-footer__menu-wrapper menu-program">
-               <h3 class="name"><?php /*echo esc_html( pll__( 'Програми' ) ); */?></h3>
+           <div class="site-footer__menu-wrapper menu-program">
+               <h3 class="name"><?php echo esc_html( pll__( 'Програми' ) ); ?></h3>
 	           <?php
-/*		           wp_nav_menu(
+		           wp_nav_menu(
 			           array(
 				           'theme_location' => 'menu-2',
 				           'menu_id'        => 'program-menu',
@@ -73,12 +84,12 @@
 				           'menu_class'     => 'program-menu'
 			           )
 		           );
-	           */?>
+	           ?>
            </div>
           <div class="site-footer__menu-wrapper menu-info">
-            <h3 class="name"><?php /*echo esc_html( pll__( 'Інформація' ) ); */?></h3>
+            <h3 class="name"><?php echo esc_html( pll__( 'Інформація' ) );?></h3>
 	          <?php
-/*		          wp_nav_menu(
+		          wp_nav_menu(
 			          array(
 				          'theme_location' => 'menu-3',
 				          'menu_id'        => 'info-menu',
@@ -86,8 +97,8 @@
 				          'menu_class'     => 'info-menu'
 			          )
 		          );
-	          */?>
-          </div>-->
+	          ?>
+          </div>
 
 
         </div>

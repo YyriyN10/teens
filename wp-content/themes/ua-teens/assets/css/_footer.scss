@@ -6,6 +6,12 @@
     position: relative;
     padding-top: 16px;
 
+    @media(max-width: 992px){
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
     @media(max-width: 767px){
       flex-wrap: wrap;
       justify-content: space-between;
@@ -26,14 +32,19 @@
 
   &__logo-wrapper{
     flex-wrap: wrap;
+    width: 392px;
 
-    svg{
-      width: 295px;
+    @media(max-width: 992px){
+      width: 100%;
     }
 
     @media(max-width: 767px){
       width: 100%;
       margin-bottom: 10px;
+    }
+
+    svg{
+      width: 295px;
     }
 
     .logo{
@@ -58,10 +69,37 @@
       width: 100%;
       margin-top: 48px;
     }
+
+    .send-seo{
+      margin-top: 32px;
+      width: 100%;
+
+      h3{
+        text-transform: uppercase;
+        font-family: $f-bold;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      p{
+        margin-bottom: 32px;
+      }
+
+      .button{
+        height: auto;
+        svg{
+          width: 24px;
+        }
+      }
+    }
   }
 
   &__menu-wrapper{
     padding-top: 33px;
+
+    @media(max-width: 992px){
+      padding-top: 0;
+    }
 
     @media(max-width: 767px){
       padding-top: 0;
@@ -75,7 +113,8 @@
 
       @media(max-width: 992px){
         font-size: 14px;
-        margin-bottom: 40px;
+        /*margin-bottom: 40px;*/
+        margin-bottom: 30px;
       }
 
       @media(max-width: 767px){
@@ -89,6 +128,10 @@
       margin: 0;
       display: grid;
       gap: 16px;
+
+      @media(max-width: 992px){
+        gap: 8px;
+      }
 
       li{
         list-style: none;
@@ -109,6 +152,10 @@
     &.menu-program{
       margin-left: auto;
 
+      @media(max-width: 992px){
+        margin-left: 0;
+      }
+
       @media(max-width: 767px){
         margin-left: 0;
       }
@@ -122,7 +169,8 @@
       }
 
       @media(max-width: 992px){
-        margin-left: 40px;
+        /*margin-left: 40px;*/
+        margin-left: 0;
       }
 
       @media(max-width: 767px){

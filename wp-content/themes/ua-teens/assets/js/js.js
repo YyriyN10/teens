@@ -8,6 +8,16 @@ jQuery(function($) {
    * Menu
    */
 
+  //Get Window Width, Height
+
+  let windWid = $(window).width();
+  let windHeig = $(window).height();
+
+  $(window).resize(function () {
+    windWid = $(window).width();
+    windHeig = $(window).height();
+  });
+
   /**
    * We are it slider
    */
@@ -70,6 +80,31 @@ jQuery(function($) {
 
     });
 
+
+  }
+  /**
+   * Curses
+   */
+
+  if( $('.about-us__curses-list ').length ){
+
+    if ( windWid <= 575 ){
+      $('.about-us__curses-list').marquee({
+        duration: 10000,
+        startVisible: true,
+        direction: 'left',
+        duplicated: true
+      });
+
+    }else{
+      $('.about-us__curses-list').marquee({
+        duration: 30000,
+        startVisible: true,
+        direction: 'left',
+        duplicated: true
+      });
+      
+    }
 
   }
 
@@ -211,16 +246,6 @@ jQuery(function($) {
     });
 
   }
-
-  //Get Window Width, Height
-
-  /*let windWid = jQuery(window).width();
-  let windHeig = jQuery(window).height();
-
-  jQuery(window).resize(function () {
-    windWid = jQuery(window).width();
-    windHeig = jQuery(window).height();
-  });*/
 
   // Lazy load
 
@@ -414,17 +439,19 @@ jQuery(function($) {
   if ( $('#for-whom-slider') ){
 
     $('#for-whom-slider').slick({
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2500,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       dots: true,
+      variableWidth: true,
       responsive: [
         {
           breakpoint: 767,
           settings: {
             slidesToShow: 1,
+            variableWidth: false,
             fade: true
           }
         },
@@ -518,6 +545,85 @@ jQuery(function($) {
 
     })
   }
+
+  /**
+   * Form focus/blur
+   */
+
+  $('.form-control').on('focus', function() {
+    $(this).closest('.form-group').find('label').addClass('active');
+  });
+  $('.form-control').on('blur', function() {
+    let $this = $(this);
+    if ($this.val() == '') {
+      $this.closest('.form-group').find('label').removeClass('active');
+      $this.removeClass('data-in');
+    }else{
+      $this.addClass('data-in');
+    }
+  });
+
+  /**
+   * PHONE MASK
+    */
+
+  $("input[type=tel]").mask("+38(999) 999-99-99");
+
+  /**
+   * Form integration
+   */
+
+  function getQueryVariable(variable) {
+      let query = window.location.search.substring(1);
+      let vars = query.split('&');
+      for (leti = 0; i < vars.length; i++) {
+          let pair = vars[i].split('=');
+          if (decodeURIComponent(pair[0]) == variable) {
+              return decodeURIComponent(pair[1]);
+          }
+      }
+  }
+  utm_source = getQueryVariable('utm_source') ? getQueryVariable('utm_source') : "";
+  utm_medium = getQueryVariable('utm_medium') ? getQueryVariable('utm_medium') : "";
+  utm_campaign = getQueryVariable('utm_campaign') ? getQueryVariable('utm_campaign') : "";
+  utm_term = getQueryVariable('utm_term') ? getQueryVariable('utm_term') : "";
+  utm_content = getQueryVariable('utm_content') ? getQueryVariable('utm_content') : "";
+
+  let forms = $('form');
+  $.each(forms, function (index, form) {
+      jQueryform = $(form);
+      jQueryform.append('<input type="hidden" name="utm_source" value="' + utm_source + '">');
+      jQueryform.append('<input type="hidden" name="utm_medium" value="' + utm_medium + '">');
+      jQueryform.append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
+      jQueryform.append('<input type="hidden" name="utm_term" value="' + utm_term + '">');
+      jQueryform.append('<input type="hidden" name="utm_content" value="' + utm_content + '">');
+  });
+
+  $('form').on('submit', function (e) {
+    e.preventDefault();
+
+    let thisForm = $(this);
+
+    let utmSource = thisForm.find('input[name = utm_source]').val();
+    let utmMedium = thisForm.find('input[name = utm_medium]').val();
+    let utmCampaign = thisForm.find('input[name = utm_campaign]').val();
+    let utmTerm = thisForm.find('input[name = utm_term]').val();
+    let utmContent= thisForm.find('input[name = utm_content]').val();
+
+    let name = thisForm.find('input[name = name]').val();
+    let phone = thisForm.find('input[name = phone]').val();
+    let email = thisForm.find('input[name = email]').val();
+    let birthday = thisForm.find('input[name = birthday]').val();
+    let message = thisForm.find('textarea[name = message]').val();
+
+    let acton = thisForm.find('input[name = action]').val();
+    let siteUrl = thisForm.find('input[name = site-url').val();
+    let siteLang = thisForm.find('input[name = site-lang]').val();
+    let pageName = thisForm.find('input[name = page-name]').val();
+
+
+    console.log(message);
+  });
 
   //Смена категории курсов
 
@@ -745,9 +851,7 @@ jQuery(function($) {
         jQuery('.mein-slider').slick('slickNext');
     });*/
 
-    // PHONE MASK
 
-    /*jQuery("input[type=tel]").mask("+38(999) 999-99-99");*/
 
     // DTA VALUE REPLACE
 
@@ -790,33 +894,7 @@ jQuery(function($) {
         }
     });*/
 
-    // UTM
 
-    /*function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            if (decodeURIComponent(pair[0]) == variable) {
-                return decodeURIComponent(pair[1]);
-            }
-        }
-    }
-    utm_source = getQueryVariable('utm_source') ? getQueryVariable('utm_source') : "";
-    utm_medium = getQueryVariable('utm_medium') ? getQueryVariable('utm_medium') : "";
-    utm_campaign = getQueryVariable('utm_campaign') ? getQueryVariable('utm_campaign') : "";
-    utm_term = getQueryVariable('utm_term') ? getQueryVariable('utm_term') : "";
-    utm_content = getQueryVariable('utm_content') ? getQueryVariable('utm_content') : "";
-
-    var forms = jQuery('form');
-    jQuery.each(forms, function (index, form) {
-        jQueryform = jQuery(form);
-        jQueryform.append('<input type="hidden" name="utm_source" value="' + utm_source + '">');
-        jQueryform.append('<input type="hidden" name="utm_medium" value="' + utm_medium + '">');
-        jQueryform.append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
-        jQueryform.append('<input type="hidden" name="utm_term" value="' + utm_term + '">');
-        jQueryform.append('<input type="hidden" name="utm_content" value="' + utm_content + '">');
-    });*/
 
 });
 

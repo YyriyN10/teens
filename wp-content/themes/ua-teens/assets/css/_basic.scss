@@ -554,7 +554,13 @@ svg{
 /*--- form ---*/
 
 form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
   .form-group{
+    position: relative;
+    margin: 0;
 
     .form-control{
       width: 100%;
@@ -563,8 +569,15 @@ form{
       border: none;
       box-shadow: none;
       transition: all 0.5s;
+      background-color: rgba(0,0,0,0);
+      border-bottom: 1px solid $color-white-gray;
+      position: relative;
+      z-index: 1;
+      color: $color-white-gray;
+      padding: 15px 0;
+      resize: none;
 
-      ::-webkit-input-placeholder {
+      /*::-webkit-input-placeholder {
         color: #000000;
       }
       :-moz-placeholder {
@@ -575,7 +588,53 @@ form{
       }
       :-ms-input-placeholder {
         color: #000000;
+      }*/
+
+      &:focus{
+        border-bottom-color: $color-orange;
       }
+
+      &.birthday{
+        color: rgba(0,0,0,0);
+
+        &:focus{
+          color: $color-white-gray;
+        }
+      }
+
+      &.data-in{
+        color: $color-white-gray;
+      }
+    }
+
+    .piker-icon{
+      position: absolute;
+      width: 24px;
+      right: 16px;
+      bottom: 15px;
+    }
+
+    label{
+      position: absolute;
+      left: 0;
+      top: 15px;
+      color: $color-white-gray;
+      opacity: 0.6;
+      z-index: 2;
+      margin: 0;
+      transition: all 0.5s;
+
+      &.active{
+        color: $color-orange;
+        opacity: 1;
+        font-size: 14px;
+        top: -9px;
+
+      }
+    }
+
+    &.textarea-group{
+      height: 200px;
     }
   }
 }
@@ -609,11 +668,12 @@ form{
         .close{
           width: 60px;
           height: 60px;
-          padding: 0;
+          padding: 0 !important;
           opacity: 1;
           position: absolute;
           transition: all 0.5s;
           outline: none !important;
+          margin: 0;
         }
       }
 

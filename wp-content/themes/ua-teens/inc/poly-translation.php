@@ -272,28 +272,51 @@
 				false
 			);
 
+			pll_register_string(
+				'ua_teens_footer_send_seo_title',
+				'Написати СЕО',
+				'Переклади',
+				false
+			);
 
+			pll_register_string(
+				'ua_teens_footer_send_seo_text',
+				'Ми працюємо, щоб покращувати якість роботи. Якщо у вас є звернення, коментар — ви можете залишити його у цій формі.',
+				'Переклади',
+				false
+			);
 
-
-
+			pll_register_string(
+				'ua_teens_footer_send_seo_button',
+				'Написати',
+				'Переклади',
+				false
+			);
 
 			pll_register_string(
 				'ua_teens_placeholder_name',
-				'І’мя',
+				'Імʼя Прізвище',
 				'Переклади',
 				false
 			);
 
 			pll_register_string(
 				'ua_teens_placeholder_phone',
-				'Телефон',
+				'Ваш номер телефону',
 				'Переклади',
 				false
 			);
 
 			pll_register_string(
-				'ua_teens_placeholder_massege',
-				'Полвідомлення',
+				'ua_teens_placeholder_message',
+				'Напишіть ваш відгук',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_placeholder_irthday',
+				'Дата народження',
 				'Переклади',
 				false
 			);

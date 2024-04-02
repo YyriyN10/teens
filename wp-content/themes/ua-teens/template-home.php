@@ -53,17 +53,31 @@
   <section class="about-us indent-top-big indent-bottom-small animation-tracking">
     <div class="container">
       <div class="row">
-        <h2 class="block-title small-title upper-title col-xl-6 col-lg-7 first-up"><?php echo $aboutUsBlockTile;?></h2>
+        <h2 class="block-title small-title upper-title col-12 first-up text-center large-margin"><?php echo $aboutUsBlockTile;?></h2>
+        <div class="about-us__wrapper col-12">
+          <ul class="about-us__curses-list col-12 second-up">
+		        <?php foreach( $aboutUsCursesList as $item ):?>
+              <li class="about-us__course-item">
+                <div class="inner">
+                  <div class="icon"><img src="<?php echo $item['icon'];?>" alt="" class="svg-pic"></div>
+                  <p class="name"><?php echo $item['name'];?></p>
+                </div>
+              </li>
+		        <?php endforeach;?>
+          </ul>
+        </div>
+
+        <!--<h2 class="block-title small-title upper-title col-xl-6 col-lg-7 first-up"><?php /*echo $aboutUsBlockTile;*/?></h2>
         <ul class="about-us__curses-list col-xl-6 col-lg-5 d-flex second-up">
-          <?php foreach( $aboutUsCursesList as $item ):?>
+          <?php /*foreach( $aboutUsCursesList as $item ):*/?>
             <li class="about-us__course-item">
               <div class="inner">
-                <div class="icon"><img src="<?php echo $item['icon'];?>" alt="" class="svg-pic"></div>
-                <p class="name"><?php echo $item['name'];?></p>
+                <div class="icon"><img src="<?php /*echo $item['icon'];*/?>" alt="" class="svg-pic"></div>
+                <p class="name"><?php /*echo $item['name'];*/?></p>
               </div>
             </li>
-          <?php endforeach;?>
-        </ul>
+          <?php /*endforeach;*/?>
+        </ul>-->
       </div>
     </div>
   </section>
@@ -1035,7 +1049,7 @@
     <div class="container">
       <div class="row">
         <h2 class="block-title small-title big-margin upper-title col-xl-8 col-lg-9"><?php echo $ourTeamBlockTilte;?></h2>
-        <h3 class="subtitle small-subtitle col-xl-10 col-lg-11"><?php echo $ourTeamSubtitle;?></h3>
+        <p class="subtitle col-xl-10 col-lg-11"><?php echo $ourTeamSubtitle;?></p>
         <div class="text col-xl-10 col-lg-11"><?php echo wpautop($ourTeamText);?></div>
       </div>
       <div class="row ">
