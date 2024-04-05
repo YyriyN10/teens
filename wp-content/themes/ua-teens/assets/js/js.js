@@ -2,8 +2,8 @@ jQuery(function($) {
 
   /*const longForm = new Plumsail.Form("#plumsail-form-72j5", "f22ae698-edf1-4436-b11e-751a1a34a050");*/
   /*const fd = new Plumsail.Form("#plumsail-form-1efs", "8b4b65f-a4c2-49de-83bc-5e5d44ca6920");*/
-  const longForm = new Plumsail.Form("#plumsail-form-72j5", "f22ae698-edf1-4436-b11e-751a1a34a050")
-  const shortform = new Plumsail.Form("#plumsail-form-1efs", "f8b4b65f-a4c2-49de-83bc-5e5d44ca6920")
+  /*const longForm = new Plumsail.Form("#plumsail-form-72j5", "f22ae698-edf1-4436-b11e-751a1a34a050");
+  const shortform = new Plumsail.Form("#plumsail-form-1efs", "f8b4b65f-a4c2-49de-83bc-5e5d44ca6920");*/
   /**
    * Menu
    */
@@ -249,7 +249,7 @@ jQuery(function($) {
 
   // Lazy load
 
-  jQuery('.lazy').lazy();
+  $('.lazy').lazy();
 
   //Fixed Menu
 
@@ -599,7 +599,7 @@ jQuery(function($) {
       jQueryform.append('<input type="hidden" name="utm_content" value="' + utm_content + '">');
   });
 
-  $('form').on('submit', function (e) {
+  $('.ajax-form').on('submit', function (e) {
     e.preventDefault();
 
     let thisForm = $(this);
@@ -608,21 +608,46 @@ jQuery(function($) {
     let utmMedium = thisForm.find('input[name = utm_medium]').val();
     let utmCampaign = thisForm.find('input[name = utm_campaign]').val();
     let utmTerm = thisForm.find('input[name = utm_term]').val();
-    let utmContent= thisForm.find('input[name = utm_content]').val();
+    let utmContent = thisForm.find('input[name = utm_content]').val();
 
     let name = thisForm.find('input[name = name]').val();
     let phone = thisForm.find('input[name = phone]').val();
     let email = thisForm.find('input[name = email]').val();
     let birthday = thisForm.find('input[name = birthday]').val();
     let message = thisForm.find('textarea[name = message]').val();
+    let lastName = thisForm.find('input[name = last_name]').val();
 
-    let acton = thisForm.find('input[name = action]').val();
-    let siteUrl = thisForm.find('input[name = site-url').val();
+    let action = thisForm.find('input[name = action]').val();
+    let siteUrl = thisForm.find('input[name = site_url]').val();
     let siteLang = thisForm.find('input[name = site-lang]').val();
     let pageName = thisForm.find('input[name = page-name]').val();
 
+    const formData = {
+      action: action,
+      pageName: pageName,
+      name: name,
+      lastName: lastName,
+      phone: phone,
+      email: email,
+      birthday: birthday,
+      message: message,
+      utmSource: utmSource,
+      utmMedium: utmMedium,
+      utmCampaign: utmCampaign,
+      utmTerm: utmTerm,
+      utmContent: utmContent
+    }
 
-    console.log(message);
+    let thxPage = siteUrl + '/dyakuyemo';
+
+    $.post( ua_teens_ajax.url, formData, function(response) {
+
+      console.log(response);
+
+      /*window.location.href = thxPage;*/
+
+    });
+
   });
 
   //Смена категории курсов

@@ -78,7 +78,8 @@
 						      ?>
 						      <a href="<?php the_permalink();?>" target="_blank" class="team-men">
 							      <img
-								      src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>"
+                      class="lazy"
+								      data-src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];?>"
 								      alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);?>"
 							      >
 							      <span class="info">

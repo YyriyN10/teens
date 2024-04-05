@@ -35,7 +35,7 @@
 		    <div class="text-content col-xl-8 col-lg-7">
 			    <h1 class="page-title block-title big-title big-margin upper-title"><?php the_title();?></h1>
 			    <p class="subtitle big-subtitle"><?php echo $programMainScreenCall;?></p>
-			    <a href="" class="button orange-btn modification">
+			    <a href="#" rel="nofollow" class="button orange-btn modification" data-toggle="modal" data-target="#innerPageFormModal">
 				    <?php echo esc_html( pll__( 'Зв’яжіться зі мною' ) ); ?>
 				    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 					    <path d="M9 18L15 12L9 6" stroke="#F9F9F9"/>
@@ -100,7 +100,8 @@
         </div>
         <div class="pic-wrapper col-lg-5 second-up">
           <img
-              src="<?php echo wp_get_attachment_image_src($whatPurposeImage, 'full')[0];?>"
+              class="lazy"
+              data-src="<?php echo wp_get_attachment_image_src($whatPurposeImage, 'full')[0];?>"
               alt="<?php echo get_post_meta($whatPurposeImage, '_wp_attachment_image_alt', TRUE);?>"
           >
         </div>
@@ -130,7 +131,8 @@
               <?php foreach( $weWorkInWorkshop as $itemWorkshop ):?>
                 <div class="item">
                   <img
-                      src="<?php echo wp_get_attachment_image_src($itemWorkshop['image'], 'full')[0];?>"
+                      class="lazy"
+                      data-src="<?php echo wp_get_attachment_image_src($itemWorkshop['image'], 'full')[0];?>"
                       alt="<?php echo get_post_meta($itemWorkshop['image'], '_wp_attachment_image_alt', TRUE);?>"
                   >
                 </div>
@@ -141,7 +143,8 @@
               <?php foreach( $weWorkInLearning as $itemLearning ):?>
                 <div class="item">
                   <img
-                      src="<?php echo wp_get_attachment_image_src($itemLearning['image'], 'full')[0];?>"
+                      class="lazy"
+                      data-src="<?php echo wp_get_attachment_image_src($itemLearning['image'], 'full')[0];?>"
                       alt="<?php echo get_post_meta($itemLearning['image'], '_wp_attachment_image_alt', TRUE);?>"
                   >
                 </div>
@@ -203,7 +206,7 @@
       <div class="row">
         <div class="left-part col-lg-6 first-up">
           <h2 class="block-title big-title large-margin upper-title"><?php echo $studentCanBlockTitle;?></h2>
-          <a href="" class="button orange-btn">
+          <a href="#" rel="nofollow" class="button orange-btn" data-toggle="modal" data-target="#innerPageFormModal">
             <?php echo esc_html( pll__( 'Безкоштовне заняття' ) ); ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M9 18L15 12L9 6" stroke="#F9F9F9"/>
@@ -385,7 +388,8 @@
         </ul>
         <div class="image-wrapper col-xl-8 col-lg-7">
           <img
-              src="<?php echo wp_get_attachment_image_src($prospectsImage, 'full')[0];?>"
+              class="lazy"
+              data-src="<?php echo wp_get_attachment_image_src($prospectsImage, 'full')[0];?>"
               alt="<?php echo get_post_meta($prospectsImage, '_wp_attachment_image_alt', TRUE);?>"
           >
         </div>
@@ -436,7 +440,8 @@
                 <h3 class="name"><?php echo $item['name'];?></h3>
                 <div class="image">
                   <img
-                      src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"
+                      class="lazy"
+                      data-src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"
                       alt="<?php echo get_post_meta($item['image'], '_wp_attachment_image_alt', TRUE);?>"
                   >
                 </div>
@@ -465,7 +470,8 @@
                 <h3 class="name"><?php echo $item['name'];?></h3>
                 <div class="image">
                   <img
-                      src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"
+                      class="lazy"
+                      data-src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"
                       alt="<?php echo get_post_meta($item['image'], '_wp_attachment_image_alt', TRUE);?>"
                   >
                 </div>

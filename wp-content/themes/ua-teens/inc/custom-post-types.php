@@ -335,7 +335,7 @@
 			'exclude_from_search'=> false,
 			'menu_position'      => 9,
 			'menu_icon'          => 'dashicons-excerpt-view',
-			'supports'           => array( 'title', 'thumbnail', 'editor',)
+			'supports'           => array( 'title', 'thumbnail', 'excerpt',)
 		);
 
 		register_post_type( 'blog', $args );

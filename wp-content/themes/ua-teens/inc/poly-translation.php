@@ -295,7 +295,14 @@
 
 			pll_register_string(
 				'ua_teens_placeholder_name',
-				'Імʼя Прізвище',
+				'Імʼя',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_placeholder_last_name',
+				'Прізвище',
 				'Переклади',
 				false
 			);
@@ -324,6 +331,97 @@
 			pll_register_string(
 				'ua_teens_form_submit',
 				'Відправити',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_polit_approved',
+				'Затверджено',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_title',
+				'Форма',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label1',
+				'Прізвище, імя, по батькові або найменування:',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label2',
+				'Адреса реєстрації:',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label3',
+				'Код ЄДРПОУ (для юридичних осіб):',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label4',
+				'Імя, прізвище Cтудента:',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label5',
+				'Контактний телефон Студента:',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label6',
+				'Завантажити файл',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label7',
+				'Приймаю умови угоди користувача та політики конфіденційності.',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_aa_page_form_label8',
+				'Відправити цю заяву виконавцю',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_blog_title',
+				'UA-Teens блог',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_blog_subtitle',
+				'Ще більше користі',
+				'Переклади',
+				false
+			);
+
+			pll_register_string(
+				'ua_teens_blog_more',
+				'Читати',
 				'Переклади',
 				false
 			);

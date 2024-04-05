@@ -256,3 +256,125 @@
 		wp_die();
 	}
 
+	/**
+	 * Form integration
+	 */
+
+	add_action('wp_ajax_form_integration', 'form_integration_callback');
+	add_action('wp_ajax_nopriv_form_integration', 'form_integration_callback');
+
+	function form_integration_callback(){
+
+		$name = $_POST['name'];
+		$lastName = $_POST['lastName'];
+		$pageName = $_POST['pageName'];
+		$phone = $_POST['phone'];
+		$email = $_POST['email'];
+		$birthday = $_POST['birthday'];
+		$utmSource= $_POST['utmSource'];
+		$utmMedium = $_POST['utmMedium'];
+		$utmCampaign = $_POST['utmCampaign'];
+		$utmTerm = $_POST['utmTerm'];
+		$utmContent = $_POST['utmContent'];
+		$message = $_POST['message'];
+
+		$post_data_gsth = array (
+			'Імʼя' => $name,
+			'Прізвище' => $lastName,
+			'Телефон для звʼязку по заявці'  => $phone,
+			'Повна дата народження тинейджера' => $birthday,
+
+		);
+
+			$chanelGsth = curl_init();
+
+			curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbxW7FMe9gB0SNRUeF3I1Ou3EsOkyAXouh_mPMzRiPlDe6FqxESEf_hDgYQfu-gfOrx5/exec');
+		  /*curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbzIrBsR6xJaH-dodAyAqaUFwDxLQNAI5C9riAQaaX9JzG-XkicHc50nVV6jFb96jL33CA/exec');*/
+			curl_setopt($chanelGsth, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($chanelGsth, CURLOPT_POST, 1);
+			curl_setopt($chanelGsth, CURLOPT_POSTFIELDS, $post_data_gsth);
+
+			$output = curl_exec($chanelGsth);
+
+			curl_close($chanelGsth);
+
+		wp_die();
+
+	}
+
+	/**
+   * Form CEO
+   */
+
+
+	add_action('wp_ajax_form_seo', 'form_seo_callback');
+	add_action('wp_ajax_nopriv_form_seo', 'form_seo_callback');
+
+	function form_seo_callback(){
+		$name = $_POST['name'];
+		$lastName = $_POST['lastName'];
+		$phone = $_POST['phone'];
+		$mess = $_POST['message'];
+
+
+		$to = 'tumo.kyiv@gmail.com';
+		$headers = "Content-type: text/plain; charset = windows-1251";
+		$subject = 'Звертання з офлайн проекту у Львові';
+		$message = "Імʼя: $name \n Прізвище: $lastName \n Номер телефону: $phone \n ПовідомленняЖ $mess \n ";
+
+		$send = mail ($to, $subject, $message);
+
+		wp_die();
+
+	}
+
+	/**
+	 * Form Page integration
+	 */
+
+	add_action('wp_ajax_form_page_integration', 'form_page_integration_callback');
+	add_action('wp_ajax_nopriv_form_page_integration', 'form_page_integration_callback');
+
+	function form_page_integration_callback(){
+
+		$name = $_POST['name'];
+		$lastName = $_POST['lastName'];
+		$pageName = $_POST['pageName'];
+		$phone = $_POST['phone'];
+		$email = $_POST['email'];
+		$birthday = $_POST['birthday'];
+		$utmSource= $_POST['utmSource'];
+		$utmMedium = $_POST['utmMedium'];
+		$utmCampaign = $_POST['utmCampaign'];
+		$utmTerm = $_POST['utmTerm'];
+		$utmContent = $_POST['utmContent'];
+		$message = $_POST['message'];
+
+		$post_data_gsth = array (
+			'Імʼя' => $name,
+			'Прізвище' => $lastName,
+			'Телефон для звʼязку по заявці'  => $phone,
+			'Повна дата народження тинейджера' => $birthday,
+      'Пошта' => $email
+
+		);
+
+		$chanelGsth = curl_init();
+
+		curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbygrjIUlbD4gfnJ0aOFah-aTttn8IAZ6f0A7gIW0eCTtuYOoaf9K8mcevkb8sHu6rBY/exec');
+		/*curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbzIrBsR6xJaH-dodAyAqaUFwDxLQNAI5C9riAQaaX9JzG-XkicHc50nVV6jFb96jL33CA/exec');*/
+		curl_setopt($chanelGsth, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($chanelGsth, CURLOPT_POST, 1);
+		curl_setopt($chanelGsth, CURLOPT_POSTFIELDS, $post_data_gsth);
+
+		$output = curl_exec($chanelGsth);
+
+		curl_close($chanelGsth);
+
+		wp_die();
+
+	}
+
+
+
+

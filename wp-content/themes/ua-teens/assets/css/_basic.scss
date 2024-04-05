@@ -236,6 +236,19 @@ svg{
     svg{
       path{
         stroke: $color-orange;
+        transition: all 0.5s;
+      }
+    }
+
+    &:hover{
+      color: $color-black !important;
+      border: 1px solid $color-black;
+
+      svg{
+        path{
+          stroke: $color-black;
+          transition: all 0.5s;
+        }
       }
     }
   }
@@ -561,6 +574,11 @@ form{
   .form-group{
     position: relative;
     margin: 0;
+    height: 57px;
+
+    @media(max-width: 360px){
+      height: 50px;
+    }
 
     .form-control{
       width: 100%;

@@ -1,0 +1,144 @@
+
+/*--- blog-main-screen ---*/
+
+.blog-main-screen{
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media(max-width: 767px){
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  @media(max-width: 440px){
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(29, 29, 27, 0.80);
+  }
+
+  .container{
+    position: relative;
+    z-index: 2;
+  }
+
+  h1{
+    color: $color-white-gray;
+    margin-bottom: 8px;
+  }
+
+  p{
+    margin-bottom: 0;
+    font-size: 32px;
+    font-family: $f-bold;
+    color: $color-orange;
+
+    @media(max-width: 575px){
+      font-size: 28px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 24px;
+    }
+
+    @media(max-width: 360px){
+      font-size: 22px;
+    }
+  }
+}
+
+ /*--- blog-post-list ---*/
+
+.blog-post-list{
+  background-color: $color-white-gray;
+
+  .post-preview{
+    margin-bottom: 32px;
+
+    .pic-preview{
+      margin-bottom: 24px;
+      display: block;
+      width: 100%;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .info-wrapper{
+      display: block;
+    }
+
+    .title{
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-family: $f-bold;
+      color: $color-black !important;
+
+      @media(max-width: 992px){
+        font-size: 22px;
+      }
+
+      @media(max-width: 767px){
+        font-size: 20px;
+      }
+
+      span{
+        color: $color-orange !important;
+      }
+    }
+
+    .description{
+      display: block;
+      opacity: 0.6;
+      margin-bottom: 24px;
+      color: $color-black !important;
+    }
+
+    .more{
+      display: flex;
+      align-items: center;
+      color: $color-black !important;
+      transition: all 0.5s;
+
+      svg{
+        width: 24px;
+        margin-left: 16px;
+
+        path{
+          stroke: $color-black;
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    &:hover{
+      .more{
+        color: $color-orange !important;
+
+        svg{
+          path{
+            stroke: $color-orange;
+
+          }
+        }
+      }
+    }
+  }
+}

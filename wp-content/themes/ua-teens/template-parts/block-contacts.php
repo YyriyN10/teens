@@ -50,16 +50,20 @@
 
 
           </div>-->
-          <form method="post" >
+          <form class="ajax-form" method="post" >
 
             <input type="hidden" name="action" value="form_integration" >
-            <input type="hidden" name="site-url" value="<?php echo get_home_url('/');?>">
-            <input type="hidden" name="site-lang" value="<?php echo get_bloginfo('language');?>">
-            <input type="hidden" name="page-name" value="<?php the_title();?>">
+            <input type="hidden" name="site_url" value="<?php echo get_home_url('/');?>">
+            <input type="hidden" name="site_lang" value="<?php echo get_bloginfo('language');?>">
+            <input type="hidden" name="page_name" value="<?php the_title();?>">
 
             <div class="form-group">
-              <label for="main-field-name"><?php echo esc_html( pll__( 'Ваше Імʼя Прізвище,' ) ); ?></label>
+              <label for="main-field-name"><?php echo esc_html( pll__( 'Ваше Імʼя' ) ); ?></label>
               <input type="text" name="name" class="form-control" id="main-field-name">
+            </div>
+            <div class="form-group">
+              <label for="main-field-last-name"><?php echo esc_html( pll__( 'Ваше Прізвище' ) ); ?></label>
+              <input type="text" name="last_name" class="form-control" id="main-field-last-name">
             </div>
             <div class="form-group">
               <label for="main-field-birthday"><?php echo esc_html( pll__( 'Дата народження' ) ); ?></label>

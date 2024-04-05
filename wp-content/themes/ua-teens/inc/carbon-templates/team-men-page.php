@@ -113,6 +113,8 @@
 			         Field::make_image('ua_teens_team_call_left_image'.ua_teens_lang_prefix(), 'Зображення ліворуч'),
 			         Field::make_image('ua_teens_team_call_right_image'.ua_teens_lang_prefix(), 'Зображення праворуч'),
 			         Field::make_text('ua_teens_team_men_call_text'.ua_teens_lang_prefix(), 'Заклик займатися з людиною'),
+			         Field::make_text('ua_teens_team_men_call_individual_consult'.ua_teens_lang_prefix(), 'Посилання на індивідуальну консультацію')
+			          ->set_attribute('type', 'url')
 
 		         ));
 	}

@@ -173,6 +173,7 @@
   $callToLeftPic = carbon_get_post_meta(get_the_ID(),'ua_teens_team_call_left_image'.ua_teens_lang_prefix());
 	$callToRightPic = carbon_get_post_meta(get_the_ID(),'ua_teens_team_call_right_image'.ua_teens_lang_prefix());
 	$callToText = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_call_text'.ua_teens_lang_prefix());
+	$callToIndividualConsultationLink = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_call_individual_consult'.ua_teens_lang_prefix());
 
 	if ( $callToLeftPic && $callToRightPic && $callToText ):
 ?>
@@ -182,7 +183,8 @@
         <div class="content col-xl-10 offset-xl-1 d-flex">
           <div class="left-pic">
             <img
-                src="<?php echo wp_get_attachment_image_src($callToLeftPic, 'full')[0];?>"
+                class="lazy"
+                data-src="<?php echo wp_get_attachment_image_src($callToLeftPic, 'full')[0];?>"
                 alt="<?php echo get_post_meta($callToLeftPic, '_wp_attachment_image_alt', TRUE);?>"
             >
           </div>
@@ -196,7 +198,8 @@
           </div>
           <div class="right-pic">
             <img
-                src="<?php echo wp_get_attachment_image_src($callToRightPic, 'full')[0];?>"
+                class="lazy"
+                data-src="<?php echo wp_get_attachment_image_src($callToRightPic, 'full')[0];?>"
                 alt="<?php echo get_post_meta($callToRightPic, '_wp_attachment_image_alt', TRUE);?>"
             >
           </div>
@@ -204,18 +207,22 @@
       </div>
       <div class="row">
         <div class="buttons-wrapper col-xl-10 offset-xl-1 d-flex">
-          <a href="" class="button orange-btn">
-            <?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?>
+          <a href="#" rel="nofollow" class="button orange-btn" data-toggle="modal" data-target="#innerPageFormModal">
+		        <?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M9 18L15 12L9 6" stroke="#F9F9F9"/>
             </svg>
           </a>
-          <a href="" class="button orange-border">
-            <?php echo esc_html( pll__( 'Індивідуальна консультація' ) ); ?>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18L15 12L9 6" stroke="#F64B0A"/>
-            </svg>
-          </a>
+
+	        <?php if( $callToIndividualConsultationLink ):?>
+            <a href="<?php echo $callToIndividualConsultationLink ;?>" target="_blank" rel="nofollow" class="button orange-border">
+			        <?php echo esc_html( pll__( 'Індивідуальна консультація' ) ); ?>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="#F64B0A"/>
+              </svg>
+            </a>
+	        <?php endif;?>
+
         </div>
       </div>
     </div>

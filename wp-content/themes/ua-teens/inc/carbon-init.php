@@ -42,3 +42,13 @@
 	require ('carbon-templates/team-men-page.php');
 
 	require ('carbon-templates/stydent-works.php');
+
+	require ('carbon-templates/page-form-registration.php');
+
+	require ('carbon-templates/page-form-event.php');
+
+	require ('carbon-templates/page-polycy.php');
+
+	require ('carbon-templates/page-accession-agreement.php');
+
+	require ('carbon-templates/page-post.php');

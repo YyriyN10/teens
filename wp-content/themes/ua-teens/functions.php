@@ -188,49 +188,4 @@ define( 'SITE_LOCALE', get_locale() );
 define( 'THEME_PATH', get_template_directory_uri() );
 
 
-/**
- * Form integration
- */
 
-	if( !empty($googleSth)){
-
-		$post_data_gsth = array (
-			"Ім'я" => $name1,
-			'Телефон'  => $phone,
-			'Email'  => $email,
-			'Повідомлення' => $mess,
-			'UTM source' => $utmSource,
-			'UTM medium' => $utmMedium,
-			'UTM campaign' => $utmCampaign,
-			'UTM term' => $utmTerm,
-			'UTM content' => $utmContent,
-			'Назва Квізу' => $quizName
-		);
-
-		if (!empty($city)) {
-			$post_data_gsth = array (
-				"Ім'я" => $name1,
-				'Телефон'  => $phone,
-				'Email'  => $city,
-				'Сообщение' => $mess,
-				'Повідомлення' => $mess,
-				'UTM source' => $utmSource,
-				'UTM medium' => $utmMedium,
-				'UTM campaign' => $utmCampaign,
-				'UTM term' => $utmTerm,
-				'UTM content' => $utmContent,
-				'Назва Квізу' => $quizName
-			);
-		}
-
-		$chanelGsth = curl_init();
-
-		curl_setopt($chanelGsth, CURLOPT_URL, $googleSth);
-		curl_setopt($chanelGsth, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($chanelGsth, CURLOPT_POST, 1);
-		curl_setopt($chanelGsth, CURLOPT_POSTFIELDS, $post_data_gsth);
-
-		$output = curl_exec($chanelGsth);
-
-		curl_close($chanelGsth);
-	}

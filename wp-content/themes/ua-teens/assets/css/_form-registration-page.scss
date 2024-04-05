@@ -1,0 +1,150 @@
+.page-template-template-registration-form{
+  /*--- form-main-screen ---*/
+
+  .form-main-screen{
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 120px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media(max-width: 767px){
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+
+    @media(max-width: 575px){
+      padding-top: 120px;
+    }
+
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      background: rgba(29, 29, 27, 0.80);
+    }
+
+    .block-title{
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0;
+      color: $color-white-gray;
+
+      span{
+        display: block;
+      }
+    }
+  }
+
+  /*--- form-content ---*/
+
+  .form-content{
+    background-color: $color-white-gray;
+
+    .main-text{
+      margin-bottom: 32px;
+
+      p{
+        margin-bottom: 8px;
+        font-size: 24px;
+
+        @media(max-width: 440px){
+          font-size: 22px;
+        }
+
+        strong{
+          color: $color-orange;
+          font-family: $f-main;
+        }
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .directions-list-tile{
+      text-transform: uppercase;
+      font-size: 24px;
+      font-family: $f-bold;
+      color: $color-orange;
+      margin-bottom: 24px;
+    }
+
+    .directions-list{
+      margin: 0 0 24px 0;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+
+      li{
+        list-style: none;
+        position: relative;
+        padding-left: 32px;
+
+        svg{
+          position: absolute;
+          width: 24px;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .small-text{
+      margin-bottom: 0;
+    }
+
+    .form-wrapper{
+      @media(max-width: 992px){
+        margin-top: 32px;
+      }
+
+      .inner{
+        background-color: $color-black;
+        color: $color-white-gray;
+        padding: 24px;
+
+        .form-title{
+          font-size: 32px;
+          font-family: $f-bold;
+          margin-bottom: 16px;
+          text-transform: uppercase;
+          color: $color-orange;
+
+          @media(max-width: 440px){
+            text-align: center;
+          }
+        }
+
+        .subtitle{
+          margin-bottom: 32px;
+
+          @media(max-width: 440px){
+            text-align: center;
+          }
+        }
+
+        form{
+          .form-group{
+            width: 100%;
+          }
+
+          .button{
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+  }
+
+}
