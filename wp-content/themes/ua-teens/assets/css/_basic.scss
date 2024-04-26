@@ -642,11 +642,22 @@ form{
       margin: 0;
       transition: all 0.5s;
 
+      span{
+        display: none;
+        color: #606060;
+        position: absolute;
+        top: -18px;
+      }
+
       &.active{
         color: $color-orange;
         opacity: 1;
         font-size: 14px;
         top: -9px;
+
+        span{
+          display: block;
+        }
 
       }
     }

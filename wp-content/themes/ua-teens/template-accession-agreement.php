@@ -188,20 +188,21 @@
               <input type="hidden" name="site_url" value="<?php echo get_home_url('/');?>">
               <input type="hidden" name="site_lang" value="<?php echo get_bloginfo('language');?>">
               <input type="hidden" name="page_name" value="<?php the_title();?>">
+              <input type="hidden" name="page_link" value="<?php the_permalink();?>">
 
               <p class="who-form"><?php echo $accessionAgreementWho;?></p>
               <div class="form-contact-part">
                 <div class="form-group">
                   <label for="accession-field-fio"><?php echo esc_html( pll__( 'Прізвище, імя, по батькові або найменування:' ) ); ?></label>
-                  <input type="text" name="first_last_name" class="form-control" id="accession-field-fio">
+                  <input type="text" name="first_last_name" class="form-control" id="accession-field-fio" required>
                 </div>
                 <div class="form-group">
                   <label for="accession-field-email">Email</label>
-                  <input type="email" name="email" class="form-control" id="accession-field-email">
+                  <input type="email" name="email" class="form-control" id="accession-field-email" required>
                 </div>
                 <div class="form-group">
                   <label for="accession-field-address"><?php echo esc_html( pll__( 'Адреса реєстрації:' ) ); ?> </label>
-                  <input type="text" name="address" class="form-control" id="accession-field-address">
+                  <input type="text" name="address" class="form-control" id="accession-field-address" required>
                 </div>
                 <div class="form-group">
                   <label for="accession-field-edrpu"><?php echo esc_html( pll__( 'Код ЄДРПОУ (для юридичних осіб):' ) ); ?> </label>
@@ -209,7 +210,7 @@
                 </div>
                 <div class="form-group">
                   <label for="accession-field-phone"><?php echo esc_html( pll__( 'Ваш номер телефону' ) ); ?></label>
-                  <input type="tel" name="phone" class="form-control" id="accession-field-phone">
+                  <input type="tel" name="phone" class="form-control" id="accession-field-phone" required>
                 </div>
               </div>
 
@@ -221,23 +222,23 @@
               <div class="form-men-part">
                 <div class="left-part">
                   <div class="form-group">
-                    <label for="accession-field-student-name"><?php echo esc_html( pll__( 'Імя, прізвище Cтудента:' ) ); ?></label>
-                    <input type="text" name="student_name" class="form-control" id="accession-field-student-name">
+                    <label for="accession-field-student-name"><span>(<?php echo esc_html( pll__( 'тинейджера' ) ); ?>)</span><?php echo esc_html( pll__( 'Імя, прізвище Cтудента:' ) ); ?></label>
+                    <input type="text" name="student_name" class="form-control" id="accession-field-student-name" required>
                   </div>
                   <div class="form-group">
-                    <label for="accession-field-birthday"><?php echo esc_html( pll__( 'Дата народження' ) ); ?></label>
-                    <input type="date" class="form-control birthday" id="accession-field-birthday" name="birthday">
+                    <label for="accession-field-birthday"><span>(<?php echo esc_html( pll__( 'тинейджера' ) ); ?>)</span><?php echo esc_html( pll__( 'Дата народження' ) ); ?></label>
+                    <input type="date" class="form-control birthday" id="accession-field-birthday" name="birthday" required>
                     <svg class="piker-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#F8F8F8"/>
                     </svg>
                   </div>
                   <div class="form-group">
-                    <label for="accession-field-student-phone"><?php echo esc_html( pll__( 'Контактний телефон Студента:' ) ); ?></label>
-                    <input type="tel" name="student_phone" class="form-control" id="accession-field-student-phone">
+                    <label for="accession-field-student-phone"><span>(<?php echo esc_html( pll__( 'тинейджера' ) ); ?>)</span><?php echo esc_html( pll__( 'Контактний телефон Студента:' ) ); ?></label>
+                    <input type="tel" name="student_phone" class="form-control" id="accession-field-student-phone" required>
                   </div>
                   <div class="form-group">
-                    <label for="main-field--student-email">Email</label>
-                    <input type="email" name="student_email" class="form-control" id="main-field--student-email">
+                    <label for="accession-field-student-email">Email</label>
+                    <input type="email" name="student_email" class="form-control" id="accession-field-student-email" required>
                   </div>
                 </div>
                 <div class="right-part">
@@ -250,7 +251,7 @@
                           <path d="M9.5 18L15.5 12L9.5 6" stroke="#F9F9F9"/>
                         </svg>
                       </span>
-                      <input type="file" class="form-control-file" multiple name="file_1[]" id="file_1">
+                      <input type="file" class="form-control-file" multiple name="file_1[]" id="file_1" required>
                     </label>
                   </div>
                   <div class="doc-group">
@@ -262,7 +263,7 @@
                           <path d="M9.5 18L15.5 12L9.5 6" stroke="#F9F9F9"/>
                         </svg>
                       </span>
-                      <input type="file" class="form-control-file" multiple name="file_2[]" id="file_2">
+                      <input type="file" class="form-control-file" multiple name="file_2[]" id="file_2" required>
                     </label>
                   </div>
                   <div class="doc-group">
@@ -274,7 +275,7 @@
                           <path d="M9.5 18L15.5 12L9.5 6" stroke="#F9F9F9"/>
                         </svg>
                       </span>
-                      <input type="file" class="form-control-file" multiple name="file_3[]" id="file_3">
+                      <input type="file" class="form-control-file" multiple name="file_3[]" id="file_3" required>
                     </label>
                   </div>
                   <div class="doc-group">
@@ -286,7 +287,7 @@
                           <path d="M9.5 18L15.5 12L9.5 6" stroke="#F9F9F9"/>
                         </svg>
                       </span>
-                      <input type="file" class="form-control-file" multiple name="file_4[]" id="file_4">
+                      <input type="file" class="form-control-file" multiple name="file_4[]" id="file_4" required>
                     </label>
                   </div>
                 </div>
@@ -299,7 +300,8 @@
                            checked
                            name="chboxfild"
                            class="form-check-input"
-                           value="">
+                           value="ok"
+                           required >
                     <p class="checkbox__text">
 	                    <?php echo esc_html( pll__( 'Приймаю умови угоди користувача та політики конфіденційності.' ) ); ?>
                     </p>

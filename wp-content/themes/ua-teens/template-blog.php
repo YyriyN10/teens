@@ -44,8 +44,15 @@
 		     		  if ( $blogList->have_posts() ) :
 
 		     			  while ( $blogList->have_posts() ) : $blogList->the_post();
+
+		     		  $customLink = carbon_get_post_meta(get_the_ID(), 'ua_teens_blob_post_page_custom_link'.ua_teens_lang_prefix());
 		     		?>
-					     <a href="<?php the_permalink();?>" target="_blank" class="post-preview col-sm-6">
+                  <?php if( $customLink !=='' ):?>
+                      <a href="<?php echo $customLink;?>" target="_blank" class="post-preview col-sm-6">
+                  <?php else:?>
+                      <a href="<?php the_permalink();?>" target="_blank" class="post-preview col-sm-6">
+                  <?php endif;?>
+
 						     <span class="pic-preview">
 							     <img
 								     class="lazy"

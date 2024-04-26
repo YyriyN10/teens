@@ -8,6 +8,49 @@ jQuery(function($) {
    * Menu
    */
 
+  //SCROLL MENU
+
+  if ( $('.page-template-template-home').length ){
+
+    $('#main-menu .anchor a').addClass('scroll-to');
+    $('#info-menu .anchor a').addClass('scroll-to');
+
+  }else{
+
+    let siteUrl = $('.site-header .logo').attr('href');
+
+    $('#main-menu .anchor a').each(function () {
+
+      let thisLink = $(this);
+
+      let thisAnchor = thisLink.attr('href');
+
+      thisLink.attr('href', siteUrl + thisAnchor);
+    });
+
+    $('#info-menu .anchor a').each(function () {
+
+      let thisLink = $(this);
+
+      let thisAnchor = thisLink.attr('href');
+
+      thisLink.attr('href', siteUrl + thisAnchor);
+    });
+  }
+  
+  $(document).on('click', '.scroll-to', function (e) {
+      e.preventDefault();
+
+      let href = $(this).attr('href');
+
+      $('html, body').animate({
+          scrollTop: $(href).offset().top
+      }, 1000);
+
+  });
+
+
+
   //Get Window Width, Height
 
   let windWid = $(window).width();
@@ -26,7 +69,7 @@ jQuery(function($) {
 
     $('#we-are-it-slider').slick({
       autoplay: true,
-      autoplaySpeed: 2500,
+      autoplaySpeed: 3250,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
@@ -66,7 +109,7 @@ jQuery(function($) {
 
     $('.inner-gallery-slider').slick({
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3250,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
@@ -298,6 +341,19 @@ jQuery(function($) {
     $('html').toggleClass("fixedPosition");
 
   });
+
+  if ( $(windWid <= 992 ) ){
+
+    $('.header-navigation .anchor a').on('click', function (e) {
+
+      $('#menu-btn').removeClass('active');
+      $('header').removeClass('active-menu');
+      $('header nav').removeClass('open-menu');
+      $('html').removeClass("fixedPosition");
+
+    });
+  }
+
 
   /**
    * Model Modal
@@ -621,10 +677,12 @@ jQuery(function($) {
     let siteUrl = thisForm.find('input[name = site_url]').val();
     let siteLang = thisForm.find('input[name = site-lang]').val();
     let pageName = thisForm.find('input[name = page-name]').val();
+    let pageLink = thisForm.find('input[name = page_link]').val();
 
     const formData = {
       action: action,
       pageName: pageName,
+      pageLink: pageLink,
       name: name,
       lastName: lastName,
       phone: phone,
@@ -642,13 +700,15 @@ jQuery(function($) {
 
     $.post( ua_teens_ajax.url, formData, function(response) {
 
-      console.log(response);
-
-      /*window.location.href = thxPage;*/
+      window.location.href = thxPage;
 
     });
 
   });
+
+  $('form').on('submit', function () {
+    fbq("track","Lead");
+  })
 
   //Смена категории курсов
 
@@ -839,18 +899,7 @@ jQuery(function($) {
     });*/
 
 
-    //SCROLL MENU
 
-    /*jQuery(document).on('click', '.scroll-to', function (e) {
-        e.preventDefault();
-
-        var href = jQuery(this).attr('href');
-
-        jQuery('html, body').animate({
-            scrollTop: jQuery(href).offset().top
-        }, 1000);
-
-    });*/
 
     // CASTOME SLIDER ARROWS
 

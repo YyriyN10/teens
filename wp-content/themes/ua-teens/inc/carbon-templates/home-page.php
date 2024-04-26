@@ -207,43 +207,106 @@
 						 ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						      ->set_palette(array(
+						      	'#F64B0A',
+							      '#85C7F2',
+							      '#F7F00F',
+							      '#FFDBB5',
+							      '#1201FF',
+							      '#7FB069'
+						      ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_tue'.ua_teens_lang_prefix(), 'Вівторок')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_wed'.ua_teens_lang_prefix(), 'Середа')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_thu'.ua_teens_lang_prefix(), 'Четверг')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_fri'.ua_teens_lang_prefix(), 'Пʼятниця')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_sat'.ua_teens_lang_prefix(), 'Субота')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_active_san'.ua_teens_lang_prefix(), 'Неділя')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     ))
 				) )
 
@@ -252,43 +315,106 @@
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_tue'.ua_teens_lang_prefix(), 'Вівторок')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_wed'.ua_teens_lang_prefix(), 'Середа')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_thu'.ua_teens_lang_prefix(), 'Четверг')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_fri'.ua_teens_lang_prefix(), 'Пʼятниця')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_sat'.ua_teens_lang_prefix(), 'Субота')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     )),
 					Field::make_complex('home_ua_teens_study_schedules_pending_san'.ua_teens_lang_prefix(), 'Неділя')
 					     ->set_max(3)
 					     ->add_fields( array(
 						     Field::make_text('time_start', 'Початок занняття'),
-						     Field::make_text('time_stop', 'кінець занняття')
+						     Field::make_text('time_stop', 'кінець занняття'),
+						     Field::make_color('time_bg', 'Фоновий колір часу')
+						          ->set_palette(array(
+							          '#F64B0A',
+							          '#85C7F2',
+							          '#F7F00F',
+							          '#FFDBB5',
+							          '#1201FF',
+							          '#7FB069'
+						          ))
 					     ))
 				) );
 
@@ -304,6 +430,7 @@
 		         ->add_fields( array(
 			         Field::make('text', 'home_ua_teens_study_price_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
 			         Field::make('text', 'home_ua_teens_study_price_equivalent_text'.ua_teens_lang_prefix(), 'Текст "Еквівалент"'),
+			         Field::make_text('home_ua_teens_study_price_euro_price'.ua_teens_lang_prefix(), 'Ціна в євро'),
 			         Field::make('text', 'home_ua_teens_study_price_hours_text'.ua_teens_lang_prefix(), 'Текст кількість годин'),
 			         Field::make_rich_text('home_ua_teens_study_price_description'.ua_teens_lang_prefix(), 'Опис'),
 			         Field::make_textarea('home_ua_teens_study_price_quote'.ua_teens_lang_prefix(), 'Текст цитати'),

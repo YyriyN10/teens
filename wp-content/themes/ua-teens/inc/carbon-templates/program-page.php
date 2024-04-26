@@ -19,8 +19,7 @@
 		         ->add_fields( array(
 			         Field::make( 'text', 'ua_teens_page_program_main_screen_call'.ua_teens_lang_prefix(), __( 'Текст заклику' )  ),
 			         Field::make_image('ua_teens_page_program_main_screen_pic'.ua_teens_lang_prefix(), 'Зображення напрямку'),
-			         Field::make_text('ua_teens_page_program_main_screen_btn_link'.ua_teens_lang_prefix(), 'Посиляння у кнопку')
-			          ->set_attribute('type', 'url')
+			        
 		         ));
 
 		Container::make( 'post_meta', __('Для кого') )
@@ -134,6 +133,7 @@
 				         ) )
 
 		         ));
+
 
 		Container::make( 'post_meta', __('Перспективи') )
 		         ->where( function( $homeFields ) {

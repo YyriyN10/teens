@@ -268,6 +268,7 @@
 		$name = $_POST['name'];
 		$lastName = $_POST['lastName'];
 		$pageName = $_POST['pageName'];
+		$pageLink = $_POST['pageLink'];
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
 		$birthday = $_POST['birthday'];
@@ -283,6 +284,7 @@
 			'Прізвище' => $lastName,
 			'Телефон для звʼязку по заявці'  => $phone,
 			'Повна дата народження тинейджера' => $birthday,
+      'Сторінка заявки' => $pageLink,
 
 		);
 
@@ -332,14 +334,15 @@
 	 * Form Page integration
 	 */
 
-	add_action('wp_ajax_form_page_integration', 'form_page_integration_callback');
-	add_action('wp_ajax_nopriv_form_page_integration', 'form_page_integration_callback');
+	add_action('wp_ajax_form_integration_mail', 'form_integration_mail_callback');
+	add_action('wp_ajax_nopriv_form_integration_mail', 'form_integration_mail_callback');
 
-	function form_page_integration_callback(){
+	function form_integration_mail_callback(){
 
 		$name = $_POST['name'];
 		$lastName = $_POST['lastName'];
 		$pageName = $_POST['pageName'];
+		$pageLink = $_POST['pageLink'];
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
 		$birthday = $_POST['birthday'];
@@ -355,14 +358,13 @@
 			'Прізвище' => $lastName,
 			'Телефон для звʼязку по заявці'  => $phone,
 			'Повна дата народження тинейджера' => $birthday,
-      'Пошта' => $email
-
+      'Пошта' => $email,
+			'Сторінка заявки' => $pageLink,
 		);
 
 		$chanelGsth = curl_init();
 
 		curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbygrjIUlbD4gfnJ0aOFah-aTttn8IAZ6f0A7gIW0eCTtuYOoaf9K8mcevkb8sHu6rBY/exec');
-		/*curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbzIrBsR6xJaH-dodAyAqaUFwDxLQNAI5C9riAQaaX9JzG-XkicHc50nVV6jFb96jL33CA/exec');*/
 		curl_setopt($chanelGsth, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($chanelGsth, CURLOPT_POST, 1);
 		curl_setopt($chanelGsth, CURLOPT_POSTFIELDS, $post_data_gsth);

@@ -129,8 +129,8 @@ function ua_teens_scripts() {
 	wp_enqueue_style( 'ua-teens-style-main', get_template_directory_uri() . '/assets/css/style.min.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'mapbox-gl', 'https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js', array('jquery'), '0.49.0', true );
-	wp_enqueue_script( 'ua-teens-form-short', 'https://forms.plumsail.com/api/widget/f8b4b65f-a4c2-49de-83bc-5e5d44ca6920', array('jquery'), _S_VERSION, true );
-	wp_enqueue_script( 'ua-teens-form-long', 'https://forms.plumsail.com/api/widget/f22ae698-edf1-4436-b11e-751a1a34a050', array('jquery'), _S_VERSION, true );
+/*	wp_enqueue_script( 'ua-teens-form-short', 'https://forms.plumsail.com/api/widget/f8b4b65f-a4c2-49de-83bc-5e5d44ca6920', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'ua-teens-form-long', 'https://forms.plumsail.com/api/widget/f22ae698-edf1-4436-b11e-751a1a34a050', array('jquery'), _S_VERSION, true );*/
 	wp_enqueue_script( 'ua-teens-main-js', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'ua_teens_scripts' );

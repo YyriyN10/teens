@@ -3,57 +3,6 @@
 	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
-	
-	/**
-	 * Register a programs post type.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/register_post_type
-	 *
-	 * @since ua_teens 1.0
-	 */
-
-	function programs_post_type() {
-
-		$labels = array(
-			'name'               => _x( 'Програми', 'post type general name', 'ua_teens' ),
-			'singular_name'      => _x( 'Програма', 'post type singular name', 'ua_teens' ),
-			'menu_name'          => _x( 'Програми', 'admin menu', 'ua_teens' ),
-			'name_admin_bar'     => _x( 'Програми', 'add new on admin bar', 'ua_teens' ),
-			'add_new'            => _x( 'Додати нову', 'actions', 'ua_teens' ),
-			'add_new_item'       => __( 'Додати нову програму', 'ua_teens' ),
-			'new_item'           => __( 'Нова програма', 'ua_teens' ),
-			'edit_item'          => __( 'Редагувати програму', 'ua_teens' ),
-			'view_item'          => __( 'Дивитись програму', 'ua_teens' ),
-			'all_items'          => __( 'Всі програми', 'ua_teens' ),
-			'search_items'       => __( 'Шукати програму', 'ua_teens' ),
-			'parent_item_colon'  => __( 'Батько програми:', 'ua_teens' ),
-			'not_found'          => __( 'Програму не знайдено', 'ua_teens' ),
-			'not_found_in_trash' => __( 'У кошику програму не знайдно', 'ua_teens' )
-		);
-
-		$args = array(
-			'labels'             => $labels,
-			'taxonomies'         => [],
-			'description'        => __( 'Description.', 'programs' ),
-			'public'             => true,
-			'publicly_queryable' => true,
-			'show_ui'            => true,
-			'show_in_menu'       => true,
-			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'programs' ),
-			'capability_type'    => 'post',
-			'has_archive'        => false,
-			'hierarchical'       => false,
-			'exclude_from_search'=> false,
-			'menu_position'      => 5,
-			'menu_icon'          => 'dashicons-welcome-learn-more',
-			'supports'           => array( 'title', 'thumbnail', 'editor',)
-		);
-
-		register_post_type( 'programs', $args );
-	}
-
-	add_action( 'init', 'programs_post_type' );
 
 	/**
 	 * Register a students' works post type.
@@ -98,7 +47,7 @@
 			'exclude_from_search'=> false,
 			'menu_position'      => 6,
 			'menu_icon'          => 'dashicons-hammer',
-			'supports'           => array( 'title', 'thumbnail', 'editor',)
+			'supports'           => array( 'title', 'editor',)
 		);
 
 		register_post_type( 'student_works', $args );
@@ -284,7 +233,7 @@
 			'exclude_from_search'=> false,
 			'menu_position'      => 8,
 			'menu_icon'          => 'dashicons-list-view',
-			'supports'           => array( 'title', 'thumbnail', 'editor',)
+			'supports'           => array( 'title', 'editor',)
 		);
 
 		register_post_type( 'faq', $args );

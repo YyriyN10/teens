@@ -22,6 +22,18 @@
 
 		         ));
 
+		Container::make( 'post_meta', __('Посилання на іншийресурс') )
+		         ->where( function( $homeFields ) {
+			         $homeFields->where( 'post_type', '=', 'blog' );
+			         $homeFields->where( 'post_template', '=', 'template-blog-post.php' );
+		         } )
+
+		         ->add_fields( array(
+			         Field::make( 'text', 'ua_teens_blob_post_page_custom_link'.ua_teens_lang_prefix(), 'Посилання')
+			              ->set_attribute('type', 'url')
+
+		         ));
+
 		Container::make( 'post_meta', __('Головна цитата') )
 		         ->where( function( $homeFields ) {
 			         $homeFields->where( 'post_type', '=', 'blog' );

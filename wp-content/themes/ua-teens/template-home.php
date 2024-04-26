@@ -29,7 +29,7 @@
     <div class="container">
       <div class="row">
         <div class="content col-xl-8 col-lg-9 col-12">
-          <h1 class="block-title big-title big-margin upper-title"><?php echo $mainScreenTitle;?></h1>
+          <h1 class="block-title big-title big-margin "><?php echo $mainScreenTitle;?></h1>
           <p class="subtitle big-subtitle"><?php echo $mainScreenSubTitle;?></p>
           <a href="#contact-form" rel="nofollow" class="button orange-btn scroll-to">
               <?php echo esc_html( pll__( 'Зв’яжіться зі мною' ) ); ?>
@@ -66,18 +66,6 @@
 		        <?php endforeach;?>
           </ul>
         </div>
-
-        <!--<h2 class="block-title small-title upper-title col-xl-6 col-lg-7 first-up"><?php /*echo $aboutUsBlockTile;*/?></h2>
-        <ul class="about-us__curses-list col-xl-6 col-lg-5 d-flex second-up">
-          <?php /*foreach( $aboutUsCursesList as $item ):*/?>
-            <li class="about-us__course-item">
-              <div class="inner">
-                <div class="icon"><img src="<?php /*echo $item['icon'];*/?>" alt="" class="svg-pic"></div>
-                <p class="name"><?php /*echo $item['name'];*/?></p>
-              </div>
-            </li>
-          <?php /*endforeach;*/?>
-        </ul>-->
       </div>
     </div>
   </section>
@@ -90,7 +78,7 @@
 
     if ( $weAreItList && $weAreItBlockTitle ):
 ?>
-  <section class="we-are-it indent-top-small indent-bottom-big animation-tracking">
+  <section class="we-are-it indent-top-small indent-bottom-big animation-tracking" id="anchor-about-us">
     <div class="container">
       <div class="row first-up">
         <h2 class="block-title main-title small-title small-margin upper-title col-lg-8 col-12 offset-md-0 offset-lg-4">
@@ -464,8 +452,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $monSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -497,8 +489,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $tueSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -529,8 +525,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $wedSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -561,8 +561,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $thuSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -593,8 +597,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $friSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -625,8 +633,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $satSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -657,8 +669,12 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $sanSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+                            <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                            <?php else:?>
+                              <p style="color: #F9F9F9"><span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span></p>
+                            <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -697,11 +713,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $monSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>" >
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -736,11 +759,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $tueSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -774,11 +804,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $wedSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -812,11 +849,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $thuSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>" >
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -850,11 +894,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $friSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -888,11 +939,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $satSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -926,11 +984,18 @@
                         </div>
 									    <?php else:?>
 										    <?php foreach( $sanSchedulesList as $itemMany ):?>
-                          <div class="item many-item" >
-                            <p>
-                              <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
-                              <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
-                            </p>
+                          <div class="item many-item" style="background-color: <?php echo $itemMany['time_bg'];?>">
+	                          <?php if( $itemMany['time_bg'] == '#F7F00F' ||  $itemMany['time_bg'] == '#FFDBB5'):?>
+                              <p style="color: #1D1D1B">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php else:?>
+                              <p style="color: #F9F9F9">
+                                <span class="tag"><?php echo esc_html( pll__( 'Незабаром' ) ); ?></span>
+                                <span><?php echo $itemMany['time_start'];?></span> - <span><?php echo $itemMany['time_stop'];?></span>
+                              </p>
+	                          <?php endif;?>
                           </div>
 										    <?php endforeach;?>
 									    <?php endif;?>
@@ -956,10 +1021,11 @@
 	  $costEducationHours = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_price_hours_text'.ua_teens_lang_prefix());
 	  $costEducationDescription = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_price_description'.ua_teens_lang_prefix());
 	  $costEducationQuote = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_price_quote'.ua_teens_lang_prefix());
+	  $costEducationEuroText = carbon_get_post_meta(get_the_ID(), 'home_ua_teens_study_price_euro_price'.ua_teens_lang_prefix());
 
 	  if ( $costEducationBlockTitle && $costEducationDescription ):
 ?>
-  <section class="cost-education animation-tracking">
+  <section class="cost-education animation-tracking" id="anchor-cost-education">
     <div class="container">
       <div class="row">
         <div class="content col-12 indent-top-small indent-bottom-small">
@@ -982,7 +1048,12 @@
 	              --><?php /*endif;*/?>
                 ₴<?php echo $educationPrice;?>
               </p>
-              <p class="lesson-quantity"><?php echo carbon_get_theme_option('ua_teens_mons_lesson'.ua_teens_lang_prefix());?></p>
+              <p class="lesson-quantity">
+                <?php if( $costEducationEuroText ):?>
+                  <span><?php echo $costEducationEuroText;?></span>
+                <?php endif;?>
+                <?php echo carbon_get_theme_option('ua_teens_mons_lesson'.ua_teens_lang_prefix());?>
+              </p>
               <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none">
                 <g opacity="0.2">
                   <path d="M75.1666 43.1183V50.1566C75.1666 52.07 73.5949 53.6416 71.6474 53.6416H65.0533C61.3633 53.6416 57.9808 50.9425 57.6733 47.2525C57.4683 45.1 58.2883 43.0841 59.7233 41.6833C60.9874 40.385 62.7299 39.6333 64.6433 39.6333H71.6474C73.5949 39.6333 75.1666 41.205 75.1666 43.1183Z" fill="#1D1D1B"/>
@@ -1047,7 +1118,7 @@
 
   if ( $aboutUsBlockTile && $ourTeamPageLink && $countWorkers > 0 ):
 ?>
-  <section class="our-team indent-top-small">
+  <section class="our-team indent-top-small" id="our-team-anchor">
     <div class="container">
       <div class="row">
         <h2 class="block-title small-title big-margin upper-title col-xl-8 col-lg-9"><?php echo $ourTeamBlockTilte;?></h2>
@@ -1182,7 +1253,7 @@
    	$faqList = new WP_Query( $faqArgs );
 
    		  if ( $faqList->have_posts() ) :?>
-          <section class="our-faq indent-top-small indent-bottom-small">
+          <section class="our-faq indent-top-small indent-bottom-small" id="faq-anchor">
             <div class="container">
               <div class="row">
                 <h2 class="block-title upper-title big-margin small-title col-12 text-center">

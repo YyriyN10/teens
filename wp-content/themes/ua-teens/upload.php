@@ -11,6 +11,9 @@
 	$address = $_POST['address'];
 	$edrpu = $_POST['edrpu'];
 	$phone = $_POST['phone'];
+	$pageLink = $_POST['page_Link'];
+
+
 
 	$totalFile1 = count($_FILES['file_1']['name']);
 	$totalFile2 = count($_FILES['file_2']['name']);
@@ -30,7 +33,7 @@
 
 			$newFilePath = "./uploads/" . $_FILES['file_1']['name'][$i];
 
-			$file1Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_1']['name'][$i].', '.$file1Links;
+			$file1Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_1']['name'][$i].' , '.$file1Links;
 
 			if(move_uploaded_file($tmpFilePath, $newFilePath)) {
 
@@ -46,7 +49,7 @@
 
 			$newFilePath = "./uploads/" . $_FILES['file_2']['name'][$i];
 
-			$file2Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_2']['name'][$i].', '.$file2Links;
+			$file2Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_2']['name'][$i].' , '.$file2Links;
 
 			if(move_uploaded_file($tmpFilePath, $newFilePath)) {
 
@@ -62,7 +65,7 @@
 
 			$newFilePath = "./uploads/" . $_FILES['file_3']['name'][$i];
 
-			$file3Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_3']['name'][$i].', '.$file3Links;
+			$file3Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_3']['name'][$i].' , '.$file3Links;
 
 			if(move_uploaded_file($tmpFilePath, $newFilePath)) {
 
@@ -78,20 +81,13 @@
 
 			$newFilePath = "./uploads/" . $_FILES['file_4']['name'][$i];
 
-			$file4Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_4']['name'][$i].', '.$file4Links;
+			$file4Links = $siteUrl.'/wp-content/themes/ua-teens/uploads/'.$_FILES['file_4']['name'][$i].' , '.$file4Links;
 
 			if(move_uploaded_file($tmpFilePath, $newFilePath)) {
 
 			}
 		}
 	}
-
-
-
-	echo $file1Links.'</br>';
-	echo $file2Links.'</br>';
-	echo $file3Links.'</br>';
-	echo $file4Links.'</br>';
 
 	$post_data_gsth = array (
 		'Прізвище, імʼя, по батькові' => $firstLastName,
@@ -102,17 +98,18 @@
 		'Імʼя, прізвище Студента' => $studentName,
 		'Дата народження Студента' => $birthday,
 		'Контактний телефон студента' => $studentPhone,
-		'Електронна пошта' => $studentEmail ,
+		'Електронна пошта Студента' => $studentEmail ,
 		'Документ, що посвідчує особу Студента' => $file1Links,
 		'Документ, що посвідчує особу Замовника' => $file2Links,
 		'Документ, що посвідчує повноваження Замовника діяти від імені Студента' => $file3Links,
-		'Документ, що посвідчує повноваження підписувати документи' => $file4Links
+		'Документ, що посвідчує повноваження підписувати документи' => $file4Links,
+		'Сторінка заявки' => $pageLink,
 
 	);
 
 	$chanelGsth = curl_init();
 
-	curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbygrjIUlbD4gfnJ0aOFah-aTttn8IAZ6f0A7gIW0eCTtuYOoaf9K8mcevkb8sHu6rBY/exec');
+	curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbxzP7lzUz_kh0B1Y4pzs7k4iIjksu0NFKF1upSfAnOr0PsDP9qSAibEdG2V0DTasVv0ow/exec');
 	/*curl_setopt($chanelGsth, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbzIrBsR6xJaH-dodAyAqaUFwDxLQNAI5C9riAQaaX9JzG-XkicHc50nVV6jFb96jL33CA/exec');*/
 	curl_setopt($chanelGsth, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($chanelGsth, CURLOPT_POST, 1);
@@ -121,5 +118,7 @@
 	$output = curl_exec($chanelGsth);
 
 	curl_close($chanelGsth);
+
+	header('Location:'.$siteUrl.'/dyakuyemo');
 
 	wp_die();

@@ -42,14 +42,14 @@
 									'EUR' => 'Євро',
 								)),
 							Field::make_text('ua_teens_mons_lesson'.ua_teens_lang_prefix(), 'За скільки занять')
-						))
+						));
 
-						->add_tab( 'Хочеш стати студентом?', array(
+						/*->add_tab( 'Хочеш стати студентом?', array(
 							Field::make_text('ua_teens_become_student_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
 							Field::make_image('ua_teens_become_student_image'.ua_teens_lang_prefix(), 'Зображення блоку')
 								->set_value_type('url')
 
-						));
+						));*/
 
 
 

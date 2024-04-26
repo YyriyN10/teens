@@ -58,21 +58,29 @@
 
   <!-- Education -->
 <?php
-  $educationTeamMenUniversity = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_university'.ua_teens_lang_prefix());
+  $educationTeamMenUniversityList = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_university_list'.ua_teens_lang_prefix());
 	$educationTeamMenText = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_text'.ua_teens_lang_prefix());
 	$educationTeamMenQuote = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_quote'.ua_teens_lang_prefix());
 	$educationTeamMenMainPicList = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_main_pic_list'.ua_teens_lang_prefix());
 	$educationTeamMenBidPicList = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_bottom_pic_list'.ua_teens_lang_prefix());
 	$educationTeamMenSmallPicList = carbon_get_post_meta(get_the_ID(),'ua_teens_team_men_education_bottom__mini_pic_list'.ua_teens_lang_prefix());
 
-	if ($educationTeamMenUniversity && $educationTeamMenText && $educationTeamMenMainPicList)
+	if ($educationTeamMenUniversityList && $educationTeamMenText && $educationTeamMenMainPicList)
 ?>
   <section class="education-team-men indent-top-small indent-bottom-small">
     <div class="container">
       <div class="row">
         <div class="left-part col-md-6">
           <h2 class="block-title small-title small-margin upper-title"><span><?php echo esc_html( pll__( 'Освіта' ) ); ?></span></h2>
-          <p class="subtitle small-subtitle"><?php echo $educationTeamMenUniversity;?></p>
+          <?php foreach( $educationTeamMenUniversityList as $item):?>
+            <p class="subtitle small-subtitle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18.0001 14.419V16.7C17.9978 17.0416 17.9093 17.3771 17.7427 17.6754C17.5761 17.9736 17.3368 18.2249 17.0471 18.406C15.5686 19.4433 13.8063 19.9998 12.0001 19.9998C10.194 19.9998 8.43172 19.4433 6.95314 18.406C6.66346 18.2249 6.42421 17.9736 6.25761 17.6754C6.09101 17.3771 6.00244 17.0416 6.00014 16.7V14.419C6.00009 14.4016 6.00458 14.3845 6.01315 14.3694C6.02172 14.3543 6.03409 14.3417 6.04903 14.3328C6.06397 14.3239 6.08097 14.3191 6.09835 14.3188C6.11573 14.3184 6.13289 14.3227 6.14814 14.331L9.82014 16.34C10.4902 16.7006 11.2392 16.8894 12.0001 16.8894C12.7611 16.8894 13.5101 16.7006 14.1801 16.34L17.8521 14.331C17.8674 14.3227 17.8846 14.3184 17.9019 14.3188C17.9193 14.3191 17.9363 14.3239 17.9512 14.3328C17.9662 14.3417 17.9786 14.3543 17.9871 14.3694C17.9957 14.3845 18.0002 14.4016 18.0001 14.419ZM19.9371 7.90501L13.4651 4.37401C13.0159 4.12841 12.5121 3.99969 12.0001 3.99969C11.4882 3.99969 10.9844 4.12841 10.5351 4.37401L4.06314 7.90501C3.74139 8.08064 3.47287 8.33967 3.28579 8.65491C3.09872 8.97015 3 9.32995 3 9.69651C3 10.0631 3.09872 10.4229 3.28579 10.7381C3.47287 11.0534 3.74139 11.3124 4.06314 11.488L10.5351 15.018C10.9844 15.2636 11.4882 15.3923 12.0001 15.3923C12.5121 15.3923 13.0159 15.2636 13.4651 15.018L19.9371 11.488L19.2501 11.862V16C19.2501 16.1989 19.3292 16.3897 19.4698 16.5303C19.6105 16.671 19.8012 16.75 20.0001 16.75C20.1991 16.75 20.3898 16.671 20.5305 16.5303C20.6711 16.3897 20.7501 16.1989 20.7501 16V10.671C21.009 10.1964 21.0688 9.63838 20.9163 9.11968C20.7639 8.60099 20.4117 8.16408 19.9371 7.90501Z" fill="black"/>
+              </svg>
+              <span><?php echo $item['text'];?></span>
+            </p>
+          <?php endforeach;?>
+
           <div class="text"><?php echo wpautop($educationTeamMenText);?></div>
           <?php if( $educationTeamMenQuote ):?>
             <div class="quote">
@@ -132,6 +140,7 @@
 	$teamMenWorksProgramsLink = carbon_get_post_meta(get_the_ID(),'ua_teens_team_programs_works_work_link'.ua_teens_lang_prefix());
 	$teamMenWorksProgramsMainText = carbon_get_post_meta(get_the_ID(),'ua_teens_team_programs_works_work_text'.ua_teens_lang_prefix());
 	$teamMenWorksProgramsLinkText = carbon_get_post_meta(get_the_ID(),'ua_teens_team_programs_works_work_text_link'.ua_teens_lang_prefix());
+	$teamMenWorksProgramsLogo = carbon_get_post_meta(get_the_ID(),'ua_teens_team_programs_works_work_logo'.ua_teens_lang_prefix());
 
 	if ($teamMenWorksProgramsList || $teamMenWorksProgramsLink ):
 ?>
@@ -141,7 +150,16 @@
         <div class="content col-12">
           <?php if( $teamMenWorksProgramsType == 'works' ):?>
             <h2 class="block-title small-title upper-title"><?php echo $teamMenWorksProgramsMainText;?>
-              <span><a href="<?php echo $teamMenWorksProgramsLink;?>" target="_blank" rel="nofollow"><?php echo $teamMenWorksProgramsLinkText;?></a></span>
+              <span>
+                <?php echo $teamMenWorksProgramsLinkText;?>
+                <a href="<?php echo $teamMenWorksProgramsLink;?>" target="_blank" rel="nofollow">
+                  <img
+                      src="<?php echo wp_get_attachment_image_src($teamMenWorksProgramsLogo, 'full')[0];?>"
+                      alt="<?php echo get_post_meta($teamMenWorksProgramsLogo, '_wp_attachment_image_alt', TRUE);?>"
+                  >
+                </a>
+              </span>
+
             </h2>
           <?php endif;?>
           <?php if( $teamMenWorksProgramsType == 'programs' ):?>

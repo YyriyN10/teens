@@ -426,5 +426,12 @@
 				false
 			);
 
+			pll_register_string(
+				'ua_teens_label_student',
+				'тинейджера',
+				'Переклади',
+				false
+			);
+
 		}
 	}
