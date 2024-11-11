@@ -255,12 +255,39 @@
 
           label{
             position: relative;
-            display: block;
+            /*display: block;*/
+            display: flex;
+            align-items: center;
+
+            .file-added{
+              width: 36px;
+              height: auto;
+              margin-left: 32px;
+              opacity: 0;
+              transition: all 0.5s;
+
+              @media(max-width: 992px){
+                width: 24px;
+                margin-left: 24px;
+              }
+            }
+
+            .button{
+              @media(max-width: 992px){
+                padding: 15px 30px;
+              }
+            }
 
             input{
               position: absolute;
               z-index: -1;
               opacity: 0;
+            }
+
+            &.added{
+              .file-added{
+                opacity: 1;
+              }
             }
           }
         }

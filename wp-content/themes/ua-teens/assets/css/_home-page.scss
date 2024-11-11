@@ -1212,6 +1212,130 @@
   }
 }
 
+
+/*--- special-offer ---*/
+
+.special-offer{
+  background-color: $color-white;
+
+  .price-content{
+    @media(max-width: 992px){
+      margin-bottom: 32px;
+    }
+    .inner{
+      background-color: $color-black;
+      padding: 24px;
+
+      .subtitle{
+        text-transform: uppercase;
+        color: $color-white;
+        text-align: center;
+        font-family: $f-bold;
+        margin-bottom: 16px;
+
+        span{
+          color: $color-orange;
+        }
+      }
+
+      .sub-call{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: $color-white;
+      }
+
+      .price-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 16px;
+
+        .old-price{
+          display: flex;
+          align-items: flex-start;
+
+          svg{
+            width: 12px;
+            height: auto;
+            margin-right: 7px;
+            margin-top: 10px;
+          }
+
+          span{
+            position: relative;
+            color: $color-gray;
+            letter-spacing: -1.44px;
+            line-height: 1.2;
+            font-size: 48px;
+            font-family: $f-bold;
+
+            @media(max-width: 440px){
+              font-size: 42px;
+            }
+
+            &:after{
+              content: '';
+              width: 4px;
+              height: 59px;
+              background: $color-orange;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform-origin: center;
+              transform: rotate(-45deg) translateX(-50%);
+
+              @media(max-width: 440px){
+                height: 51px;
+              }
+            }
+          }
+        }
+
+        .new-price{
+          color: $color-orange;
+          font-size: 64px;
+          line-height: 1.2;
+          font-family: $f-bold;
+
+          @media(max-width: 440px){
+            font-size: 54px;
+          }
+        }
+      }
+
+      .call{
+        font-size: 18px;
+        margin-bottom: 24px;
+        color: $color-white;
+      }
+    }
+  }
+
+  .text-content{
+    position: relative;
+
+    a{
+      color: $color-black !important;
+    }
+
+    svg{
+      position: absolute;
+      bottom: 0;
+      left: 12px;
+      width: 106px;
+
+      @media(max-width: 992px){
+        position: relative;
+        margin-top: 32px;
+        left: 0;
+      }
+    }
+  }
+}
+
+
 /*--- our-team ---*/
 
 .our-team{

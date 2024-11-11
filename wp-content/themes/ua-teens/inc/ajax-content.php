@@ -308,7 +308,6 @@
    * Form CEO
    */
 
-
 	add_action('wp_ajax_form_seo', 'form_seo_callback');
 	add_action('wp_ajax_nopriv_form_seo', 'form_seo_callback');
 
@@ -317,7 +316,6 @@
 		$lastName = $_POST['lastName'];
 		$phone = $_POST['phone'];
 		$mess = $_POST['message'];
-
 
 		$to = 'tumo.kyiv@gmail.com';
 		$headers = "Content-type: text/plain; charset = windows-1251";
@@ -376,7 +374,4 @@
 		wp_die();
 
 	}
-
-
-
 

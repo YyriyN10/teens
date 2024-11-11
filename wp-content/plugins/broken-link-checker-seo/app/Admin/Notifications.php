@@ -24,6 +24,24 @@ class Notifications {
 	private $url = 'https://blc-plugin-cdn.aioseo.com/wp-content/notifications.json';
 
 	/**
+	 * The review notice class instance.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @var Notices\Review
+	 */
+	private $reviewNotice;
+
+	/**
+	 * The Not Connected notice class instance.
+	 *
+	 * @since 1.2.1
+	 *
+	 * @var Notices\NotConnected
+	 */
+	private $notConnectedNotice;
+
+	/**
 	 * Class constructor.
 	 *
 	 * @since 1.0.0
@@ -36,6 +54,7 @@ class Notifications {
 		}
 
 		add_action( 'init', [ $this, 'init' ], 2 );
+		add_action( 'admin_notices', [ $this, 'renderNotices' ] );
 	}
 
 	/**
@@ -54,6 +73,25 @@ class Notifications {
 		}
 
 		$this->checkForUpdates();
+
+		$this->notConnectedNotice = new Notices\NotConnected();
+		$this->reviewNotice       = new Notices\Review();
+	}
+
+	/**
+	 * Renders the notices.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return void
+	 */
+	public function renderNotices() {
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		$this->notConnectedNotice->maybeShowNotice();
+		$this->reviewNotice->maybeShowNotice();
 	}
 
 	/**

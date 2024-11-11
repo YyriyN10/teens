@@ -1,0 +1,132 @@
+
+.form-container{
+  background-color: rgba(0,0,0,0);
+
+  .fd-form{
+    padding: 0;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0);
+    /*font-size: 18px;*/
+    color: $color-orange;
+    font-family: $f-main;
+
+    .fd-button{
+      text-transform: uppercase;
+      color: $color-white-gray !important;
+      font-family: $f-bold;
+      border: none;
+      border-radius: 0;
+      font-size: 18px !important;
+      text-align: center;
+
+    }
+
+    .container-fluid{
+      padding: 0;
+
+      div{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0!important;
+      }
+
+      .justify-content-start{
+        width: 100% !important;
+      }
+
+      .fd-field-control{
+        width: 100%;
+
+        label{
+          display: block;
+          width: 100%;
+          font-size: 14px !important;
+
+          .fd-title-wrap{
+            font-size: 14px !important;
+            font-weight: 400 !important;
+          }
+        }
+
+        .form-control{
+          background-color: rgba(0,0,0,0);
+          border-radius: 0;
+          border: none;
+          border-bottom: 1px solid rgba(243, 243, 243, 0.60);
+          padding-left: 0;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          font-size: 18px;
+          min-height: 44px;
+          box-shadow: none !important;
+
+          &:focus{
+            color: $color-white-gray;
+            border-color: $color-orange;
+          }
+
+          &.k-datepicker,
+          &.k-maskedtextbox,
+          &.k-combobox{
+            width: 100% !important;
+            border: none;
+          }
+
+          .k-state-default{
+            border: none;
+            background-color: rgba(0,0,0,0);
+            color: $color-white-gray;
+            box-shadow: none;
+
+            input:focus + .k-select{
+              border-color: $color-orange;
+            }
+
+            .k-select{
+              border: none;
+              background-color: rgba(0,0,0,0);
+              color: $color-white-gray;
+              border-bottom: 1px solid rgba(243, 243, 243, 0.60);
+            }
+          }
+        }
+
+      }
+    }
+
+    .k-calendar{
+      width: 100%!important;
+    }
+  }
+}
+.contact-form{
+  background-color: #1c7430;
+
+  .fd-form{
+    width: 380px;
+    margin: 0 auto;
+
+
+
+    .row{
+      margin: 0 !important;
+
+      .fd-field-title{
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .fd-dropdown{
+        width: 100% !important;
+      }
+    }
+
+    .form-control{
+      width: 100% !important;
+    }
+
+    /*.form-control.k-widget:not(.k-autocomplete){
+      width: 300px;
+    }*/
+  }
+}

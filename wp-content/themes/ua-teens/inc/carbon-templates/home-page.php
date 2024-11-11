@@ -436,6 +436,21 @@
 			         Field::make_textarea('home_ua_teens_study_price_quote'.ua_teens_lang_prefix(), 'Текст цитати'),
 		         ));
 
+		Container::make( 'post_meta', __('Спеціальна пропозиція') )
+		         ->where( function( $homeFields ) {
+			         $homeFields->where( 'post_type', '=', 'page' );
+			         $homeFields->where( 'post_template', '=', 'template-home.php' );
+		         } )
+
+		         ->add_fields( array(
+			         Field::make('text', 'home_ua_teens_special_offer_title'.ua_teens_lang_prefix(), 'Заголовок блоку'),
+			         Field::make('text', 'home_ua_teens_special_offer_equivalent_text'.ua_teens_lang_prefix(), 'Текст "лише за"'),
+			         Field::make_text('home_ua_teens_special_offer_euro_price'.ua_teens_lang_prefix(), 'Ціна в євро'),
+			         Field::make_text('home_ua_teens_special_offer_new_price'.ua_teens_lang_prefix(), 'Ваша ціна'),
+			         Field::make('text', 'home_ua_teens_special_offer_call_text'.ua_teens_lang_prefix(), 'Текст заклику'),
+			         Field::make_rich_text('home_ua_teens_special_offer_description'.ua_teens_lang_prefix(), 'Опис пропозиції'),
+		         ));
+
 		Container::make( 'post_meta', __('Блок з командою') )
 		         ->where( function( $homeFields ) {
 			         $homeFields->where( 'post_type', '=', 'page' );

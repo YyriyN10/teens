@@ -433,5 +433,13 @@
 				false
 			);
 
+			pll_register_string(
+				'ua_teens_btn_special_offer',
+				'Скористатись пропозицією',
+				'Переклади',
+				false
+			);
+
+
 		}
 	}

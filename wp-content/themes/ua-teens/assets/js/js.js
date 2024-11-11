@@ -49,8 +49,6 @@ jQuery(function($) {
 
   });
 
-
-
   //Get Window Width, Height
 
   let windWid = $(window).width();
@@ -660,6 +658,8 @@ jQuery(function($) {
 
     let thisForm = $(this);
 
+    /*thisForm.find('button').addClass('disable');*/
+
     let utmSource = thisForm.find('input[name = utm_source]').val();
     let utmMedium = thisForm.find('input[name = utm_medium]').val();
     let utmCampaign = thisForm.find('input[name = utm_campaign]').val();
@@ -707,8 +707,28 @@ jQuery(function($) {
   });
 
   $('form').on('submit', function () {
+    $(this).find('button').addClass('disable');
     fbq("track","Lead");
+
   })
+
+  /**
+   * Files added
+   */
+
+  $('.form-control-file').on('change', function (e) {
+    $(this).parent('label').addClass('added');
+
+    $(this).closest('svg').addClass('added');
+  })
+
+    /*$('#file_1').on('change', function (e) {
+
+      $(this).parent('label').addClass('added');
+
+      $(this).closest('svg').addClass('added');
+
+    });*/
 
   //Смена категории курсов
 
